@@ -502,7 +502,6 @@ legend {
 }
 
 .page__holder__status button {
-  /* box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16); */
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -1305,9 +1304,14 @@ legend {
   margin: 0;
 }
 
-.page__holder__status header,
 .page__holder__templates header {
   margin: 1.5% 0 0 9.8%;
+  width: 159px;
+  height: 39px;
+}
+
+.page__holder__status header {
+  margin: 2.8% 0 0 9.7%;
   width: 159px;
   height: 39px;
 }

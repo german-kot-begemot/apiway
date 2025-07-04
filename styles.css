@@ -802,8 +802,9 @@ legend {
   letter-spacing: -0.6px;
 }
 
-.page__holder__automations.card_icon_move {
+.page__holder__automations .card__item__icons__holder .card_icon_move {
   height: 50%;
+  width: 90%;
 }
 
 .card__item__icons__holder {
@@ -1488,6 +1489,10 @@ legend {
   position: relative;
 }
 
+.account {
+  margin-bottom: 20px;
+}
+
 .account svg {
   transition: transform 0.3s ease;
 }
@@ -1500,7 +1505,8 @@ legend {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 300px;
+  width: 245px;
+  top: -7%;
   background: white;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -1555,8 +1561,12 @@ legend {
 
 .card_icon {
   width: 40px;
-  /* height: 40px; */
   border-radius: 50%;
+}
+
+.page__holder__automations .card_icon {
+  width: 56px;
+  height: 56px;
 }
 
 .akk__holder {

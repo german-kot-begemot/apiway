@@ -452,6 +452,7 @@ legend {
   background: var(--background);
   height: 100vh;
   padding: 32px;
+  overflow: scroll;
 }
 
 .integration__content h1 {

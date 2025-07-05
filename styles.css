@@ -2261,4 +2261,8 @@ input[type='radio'] {
     width: 24px;
     height: 24px;
   }
+
+  .page__holder__status .connect__aside__img {
+    width: auto;
+  }
 }

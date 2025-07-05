@@ -121,18 +121,74 @@
             <div class="step-block">
               <h3>Also, you will reply to comments so people feel seen and special</h3>
               <div class="step-block-content">
-                <button>Check your DMs! 📩</button>
+                <button>Проверь свой Директ :) </button>
                 <button>Thanks! Please see DMs 😉</button>
                 <button>Sent you a message! Check it out! 👍</button>
-              </div>
-              
+              </div>           
+            </div>
+
+            <div class="step-block">
+              <h3>Activate DM automation</h3>
+              <label class="toggle-switch">
+                <input type="checkbox" />
+                <div class="toggle-switch-background">
+                  <div class="toggle-switch-handle"></div>
+                </div>
+              </label>
             </div>
             
         </form>
-
-       
       </aside>
-      <main class="create__main"></main>
+
+      <main class="create__main">
+        <header class="create__main__header">
+          <div class="video_header_holder">        
+              <button class="video__btn">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.99984 0.666504C4.39746 0.666504 0.666504 4.39746 0.666504 8.99984C0.666504 13.6022 4.39746 17.3332 8.99984 17.3332C13.6022 17.3332 17.3332 13.6022 17.3332 8.99984C17.3332 6.7897 16.4552 4.67008 14.8924 3.10728C13.3296 1.54448 11.21 0.666504 8.99984 0.666504ZM8.99984 15.6665C5.31794 15.6665 2.33317 12.6817 2.33317 8.99984C2.33317 5.31794 5.31794 2.33317 8.99984 2.33317C12.6817 2.33317 15.6665 5.31794 15.6665 8.99984C15.6665 10.7679 14.9641 12.4636 13.7139 13.7139C12.4636 14.9641 10.7679 15.6665 8.99984 15.6665ZM6.82454 5.41372C7.02361 5.30466 7.26616 5.31211 7.45817 5.43317L12.3332 8.4665C12.515 8.58293 12.6249 8.78395 12.6249 8.99984C12.6249 9.21572 12.515 9.41674 12.3332 9.53317L7.45817 12.5665C7.26616 12.6876 7.02361 12.695 6.82454 12.586C6.62547 12.4769 6.50118 12.2685 6.49984 12.0415V5.95817C6.50118 5.73119 6.62547 5.52277 6.82454 5.41372Z"
+                    fill="#242424"
+                  />
+                </svg>
+                <span>Watch video tutorial</span>
+              </button>
+          </div>
+          <div class="public_holder">
+            <label class="toggle-switch">
+              <input type="checkbox" />
+              <div class="toggle-switch-background">
+                <div class="toggle-switch-handle"></div>
+              </div>
+            </label>
+            <h3>Unpublish</h3>
+          </div>
+        </header>
+        <div class="create__main__content">
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggleDetected" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle">Comments</div>
+            </div>
+          </label>
+          <div class="phone_holder">
+            <div class="phone__screen"> 
+              <div id="detect" class="detect "></div>
+              <img
+              src="images/phone-part-bg.png"
+              class="bg_phone"
+            />
+          </div>
+          </div>
+ 
+      </main>
     </div>
     <script src="script.js"></script>
   </body>

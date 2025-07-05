@@ -1644,8 +1644,14 @@ legend {
 }
 
 /*Create connections */
-.page__holder__create {
+.page__holder__create,
+.public_holder {
   display: flex;
+}
+
+.public_holder {
+  align-items: center;
+  gap: 10px;
 }
 
 .create__aside {
@@ -1660,6 +1666,26 @@ legend {
 
 .create__main {
   flex: 1;
+  padding: 30px 20px;
+}
+
+.create__main span {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 111%;
+  letter-spacing: -0.03em;
+}
+
+.create__main svg {
+  margin-bottom: 2px;
+}
+
+.create__main__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .form-progress {
@@ -1767,6 +1793,8 @@ legend {
   font-size: 20px;
   line-height: 120%;
   letter-spacing: -0.03em;
+  padding-left: 15px;
+  text-align: left;
 }
 .step-block:first-child {
   background: #fff;
@@ -1824,7 +1852,7 @@ textarea {
   line-height: 120%;
   letter-spacing: -0.03em;
   color: var(--grey);
-  padding: 13px 15px;
+  padding: 13px 15px 13px 0;
   border: transparent;
 }
 
@@ -1887,12 +1915,77 @@ input[type='radio'] {
   padding: 8px 16px;
   width: 77px;
   height: 34px;
+  transition: background 0.3s ease;
+}
+
+.options__step__block .option:hover {
+  background: rgba(254, 189, 50, 0.7);
+  cursor: pointer;
 }
 
 .page__holder__create p {
   font-size: 20px;
 }
 
+.step-block:last-child {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.create__main__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.phone_holder {
+  width: 257px;
+  height: 531px;
+  background-image: url(images/phone-bg.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-top: 11px;
+  border-radius: 0 0 37px 37px;
+}
+
+.phone__screen .bg_phone {
+  width: 257px;
+  border-radius: 0 0 37px 37px;
+}
+
+.phone__screen {
+  position: relative;
+}
+
+.detect {
+  position: absolute;
+  top: 61px;
+  left: 35px;
+  font-weight: 400;
+  font-size: 7px;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.create__main__content .toggle-switch-background {
+  width: 158px;
+}
+
+.create__main__content .toggle-switch-handle {
+  border-radius: 24px;
+  padding: 5px 8px;
+  width: 104px;
+  height: 31px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* Responsive styles */
 
 @media (max-width: 1439px) {

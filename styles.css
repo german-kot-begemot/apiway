@@ -100,7 +100,7 @@ body {
   flex-direction: column;
   font-family: var(--font-family);
   place-items: center;
-  min-height: 100vh;
+  height: auto;
   margin: 0 auto;
   padding: 0;
   border: 0;
@@ -211,7 +211,7 @@ legend {
   -ms-flex-pack: start;
   justify-content: flex-start;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .aside__header {
@@ -238,7 +238,6 @@ legend {
   flex: 0 0 222px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   flex-basis: 222px;
   transition: flex-basis 0.3s ease, padding 0.3s ease;
   overflow: hidden;
@@ -1935,16 +1934,50 @@ input[type='radio'] {
 }
 
 @media (min-width: 374px) and (max-width: 767px) {
-  .aside {
-    flex: 0 0 86px;
-    padding: 15px;
-    transition: flex-basis 0.3s ease, padding 0.3s ease;
-    position: relative;
+  body {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+  }
+  h1 {
+    font-size: 20px;
+    margin: 10px;
+  }
+  h2,
+  h3 {
+    font-size: 18px;
+    margin: 0px;
+  }
+  p {
+    font-size: 14px;
+    margin: 0px;
   }
 
   .aside {
-    min-height: 100%;
+    flex: 0 0 86px;
+    transition: flex-basis 0.3s ease, padding 0.3s ease;
+    position: relative;
+    padding: 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 50%;
   }
+
+  .footer_links a {
+    justify-content: center;
+  }
+
+  .aside__body {
+    padding: 0;
+    margin: 10px;
+  }
+
+  .aside__header,
+  .personal_menu {
+    padding: 0;
+  }
+
   .aside_transform__text {
     opacity: 0;
     width: 0;
@@ -1963,7 +1996,8 @@ input[type='radio'] {
   }
 
   .mob__changed {
-    width: 46px;
+    width: 24px;
+    height: 24px;
   }
 
   .card__item__icons p {
@@ -2101,5 +2135,39 @@ input[type='radio'] {
 
   .page__holder__templates .connect__aside__img {
     margin: 0 0 10%;
+  }
+
+  .integration__content {
+    padding: 10px;
+  }
+
+  .integration__content h2,
+  .temp__footer h3 {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .integration__content h1,
+  .temp__footer p {
+    margin: 0;
+  }
+
+  .templates__holder {
+    padding: 0;
+    gap: 10px;
+    align-items: baseline;
+    height: auto;
+  }
+
+  .temp__card {
+    width: 50%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .page__holder img,
+  .page__holder svg {
+    width: 24px;
   }
 }

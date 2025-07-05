@@ -1837,8 +1837,9 @@ input[type='radio'] {
   }
 
   .connect__aside__img {
-    margin: 13% 0 13%;
-    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .connect__aside__img img {
@@ -1870,6 +1871,10 @@ input[type='radio'] {
     flex-direction: column;
     align-items: start;
     margin-bottom: 2%;
+  }
+
+  .logo {
+    justify-content: center;
   }
 }
 
@@ -2094,6 +2099,9 @@ input[type='radio'] {
   .page__holder__status h1 {
     font-size: 20px;
   }
+  .page__holder__connect h1 {
+    text-align: center;
+  }
 
   .page__holder__connect button {
     font-size: 14px;
@@ -2104,7 +2112,7 @@ input[type='radio'] {
   }
 
   .connect__aside__img img {
-    width: 45px;
+    width: 50%;
   }
 
   .sts__btns {
@@ -2166,5 +2174,9 @@ input[type='radio'] {
   .page__holder img,
   .page__holder svg {
     width: 24px;
+  }
+
+  .page__holder__connect img {
+    width: 50%;
   }
 }

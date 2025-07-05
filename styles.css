@@ -1937,7 +1937,6 @@ input[type='radio'] {
 
   .popup-content .pop__card {
     width: 40%;
-    /* height: 57%; */
   }
 
   .pop__card__holder {
@@ -1952,7 +1951,8 @@ input[type='radio'] {
     font-size: 28px;
   }
 
-  .aside .logo__img {
+  .aside .logo__img,
+  .page__holder__templates .logo__img {
     width: 24px;
     height: 24px;
   }
@@ -1960,17 +1960,6 @@ input[type='radio'] {
   .card__item__icons p {
     font-size: 16px;
   }
-  /* 
-  .toggle-switch-handle {
-    height: 24px;
-    width: 24px;
-    top: 0;
-  }
-
-  .toggle-switch-background,
-  .toggle-switch {
-    height: 24px;
-  } */
 }
 
 @media (min-width: 374px) and (max-width: 767px) {
@@ -2111,7 +2100,6 @@ input[type='radio'] {
 
   .popup-content .pop__card {
     width: 40%;
-    /* height: 57%; */
     height: 100px;
     margin: 10px 0;
   }
@@ -2155,7 +2143,8 @@ input[type='radio'] {
 
   .page__holder__connect h2,
   .page__holder__connect h1,
-  .page__holder__status h1 {
+  .page__holder__status h1,
+  .page__holder__templates h1 {
     font-size: 20px;
   }
   .page__holder__connect h1 {
@@ -2194,11 +2183,21 @@ input[type='radio'] {
   }
 
   .page__holder__templates {
-    padding: 10%;
+    padding: 10px;
+    height: auto;
   }
 
   .page__holder__templates .connect__aside__img {
-    margin: 0 0 10%;
+    margin: 0;
+  }
+
+  .page__holder__templates .connect-btn {
+    width: 250px;
+  }
+
+  .page__holder__templates .pop__card__holder {
+    margin: 26px 0;
+    gap: 10px;
   }
 
   .integration__content {
@@ -2262,7 +2261,8 @@ input[type='radio'] {
     height: 24px;
   }
 
-  .page__holder__status .connect__aside__img {
+  .page__holder__status .connect__aside__img,
+  .page__holder__templates .connect__aside__img {
     width: auto;
   }
 }

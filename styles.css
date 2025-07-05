@@ -79,6 +79,14 @@
   -webkit-tap-highlight-color: transparent !important;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* * {
+  outline: 1px solid red;
+} */
 html {
   font-size: 100%;
   margin: 0 auto;
@@ -241,6 +249,7 @@ legend {
   flex-basis: 222px;
   transition: flex-basis 0.3s ease, padding 0.3s ease;
   overflow: hidden;
+  height: 100%;
 }
 
 .aside__body {
@@ -1653,9 +1662,6 @@ legend {
   background: var(--green);
   transition: height 0.3s;
   margin-left: 10%;
-  /* border: 4px solid var(--grey);
-  width: 1504px;
-  transform: rotate(-90deg); */
 }
 
 .timeline .icon {
@@ -1696,7 +1702,6 @@ legend {
 
 .step {
   border: 1px solid #ccc;
-  /* padding: 10px; */
   border-radius: 12px;
   width: 55px;
   height: 55px;
@@ -1867,16 +1872,7 @@ input[type='radio'] {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
-  .templates__holder {
-    justify-content: center;
-  }
-
-  .integration__content h1,
-  .integration__content h2 {
-    text-align: center;
-  }
-
+@media (min-width: 768px) {
   .search_input-holder,
   .menu_with_search {
     flex-direction: column;
@@ -1939,7 +1935,7 @@ input[type='radio'] {
     font-family: 'Inter', sans-serif;
   }
   h1 {
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px;
   }
   h2,

@@ -1421,7 +1421,8 @@ legend {
   background: var(--grey);
 }
 
-.sts__btns button:hover {
+.sts__btns button:hover,
+.point__holder button:hover {
   box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
   cursor: pointer;
 }
@@ -1847,6 +1848,10 @@ legend {
   border-radius: 12px;
 }
 
+.point__holder button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .step-block {
   display: flex;
   align-items: stretch;
@@ -1990,12 +1995,7 @@ legend {
   font-size: 20px;
   line-height: 120%;
   letter-spacing: -0.03em;
-  color: var(--grey);
-}
-
-.message-form input::placeholder {
-  color: var(--grey);
-  transform: translate(13px);
+  padding-left: 13px;
 }
 
 .message-form input::placeholder,

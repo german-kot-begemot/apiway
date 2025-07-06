@@ -176,20 +176,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /** =========================== ТАЙМЛАЙН ============================ */
-  const fields = document.querySelectorAll('.step input');
-  const line = document.querySelector('.timeline .line');
+  /** =========================== ПРЕДПРОСМОТР ИЗОБРАЖЕНИЯ ============================ */
+  const fileInput = document.getElementById('fileInput');
+  const previewContainer = document.getElementById('previewContainer');
 
-  fields.forEach(() => {
-    fields.forEach((field) => {
-      field.addEventListener('input', () => {
-        const filled = Array.from(fields).filter(
-          (f) => f.value.trim() !== ''
-        ).length;
-        const percent = filled === 0 ? 0 : (filled / fields.length) * 100;
-        line.style.height = `${percent}%`;
-      });
-    });
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        previewContainer.innerHTML = `
+          <div class="preview-wrapper">
+            <img src="${e.target.result}" alt="Preview" />
+            <button class="remove-preview" type="button" aria-label="Remove preview">
+              <img src="images/cl.svg" alt="Close" />
+            </button>
+          </div>
+        `;
+        document.querySelector('.icon').style.display = 'none';
+        document.querySelector('.upload-text').style.display = 'none';
+        document.querySelector('.browse-button').style.display = 'none';
+        document.querySelector('.file-upload').style.border = 'none';
+
+        document
+          .querySelector('.remove-preview')
+          .addEventListener('click', () => {
+            previewContainer.innerHTML = '';
+            fileInput.value = '';
+            document.querySelector('.icon').style.display = '';
+            document.querySelector('.upload-text').style.display = '';
+            document.querySelector('.browse-button').style.display = '';
+            document.querySelector('.file-upload').style.border = '';
+          });
+      };
+      reader.readAsDataURL(file);
+    } else {
+      previewContainer.innerHTML = '';
+    }
   });
 
   /** =========================== ВЫБОР ОПЦИИ LIKE ============================ */
@@ -273,11 +296,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const file = imageInput.files[0];
       const reader = new FileReader();
       reader.onload = (e) => {
-        detectImgBlock.innerHTML = ''; // очистить предыдущую
+        detectImgBlock.innerHTML = '';
         const img = document.createElement('img');
         img.src = e.target.result;
         img.alt = 'Uploaded preview';
-        img.style.maxWidth = '100%'; // для адаптива
+        img.style.maxWidth = '100%';
         detectImgBlock.appendChild(img);
       };
       reader.readAsDataURL(file);

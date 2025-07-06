@@ -74,9 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       closeBtns.forEach((btn, index) => {
         btn.addEventListener('click', () => {
-          console.log(
-            `Закрыта модалка кнопкой №${index + 1} внутри ${modalSelector}`
-          );
           modal.style.display = 'none';
         });
       });
@@ -97,6 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
     openBtn.addEventListener('click', (e) => {
       e.preventDefault();
       popupOverlay.style.display = 'flex';
+    });
+  }
+
+  const specificRadio = document.querySelector(
+    'input[name="commentOption"][value="specific"]'
+  );
+  if (specificRadio && popupOverlay) {
+    specificRadio.addEventListener('change', () => {
+      if (specificRadio.checked) {
+        popupOverlay.style.display = 'flex';
+      }
     });
   }
 

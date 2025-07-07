@@ -2435,6 +2435,7 @@ span.ig-comment__time {
   max-width: 213px;
   margin-bottom: 30px;
   height: 266px;
+  position: relative;
 }
 
 .page__holder__create .popup-content {
@@ -2462,17 +2463,24 @@ span.ig-comment__time {
   justify-content: start;
 }
 
-.page__holder__create .popup-content h2 {
-  margin: 0 0 -8px 40px;
-}
-
 .page__holder__create .pop__content img {
   width: auto;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .page__holder__create .pop__title {
   height: auto;
   justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 200%;
+  margin: 10px 0;
 }
 
 .page__holder__create .pop__title p {
@@ -2490,7 +2498,8 @@ span.ig-comment__time {
   color: rgba(36, 36, 36, 0.5);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 10px;
   width: 100%;
 }
 
@@ -2501,6 +2510,26 @@ span.ig-comment__time {
   position: absolute;
   right: 0;
   top: 0;
+  background: transparent;
+  border: none;
+  margin: 10px;
+}
+
+.post-info,
+.likes,
+.post-stats,
+.comments,
+.post-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.page__holder__create .pop__card:hover {
+  border: 1.5px solid #1877f2;
+  color: #1877f2;
+  transform: translateY(-2px);
 }
 
 /* Responsive styles */
@@ -2568,8 +2597,17 @@ span.ig-comment__time {
     padding: 2%;
   }
 
+  .page__holder__create .popup-content {
+    margin: 10px;
+    width: auto;
+  }
+
   .popup-content h2 {
     font-size: 22px;
+  }
+
+  .page__holder__create .popup-content h2 {
+    margin-bottom: 20px;
   }
 
   .pop__title h3 {
@@ -3048,5 +3086,17 @@ span.ig-comment__time {
 
   .steps:nth-child(2) .point__holder {
     padding: 10px;
+  }
+
+  .page__holder__create .pop__card__holder {
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .page__holder__create .popup-content .pop__card {
+    height: auto;
+    margin-bottom: 10px;
   }
 }

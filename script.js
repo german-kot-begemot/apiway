@@ -252,7 +252,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /** =========================== PHONE SCREEN TOGGLE ============================ */
   const createContent = document.querySelector('.create__main__content');
-  console.log('[PHONE TOGGLE] .create__main__content найден?', !!createContent);
 
   if (createContent) {
     const toggle = createContent.querySelector('#toggleDetected');
@@ -261,29 +260,17 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     const dmBlock = createContent.querySelector('.phone__screen__dm');
 
-    console.log('[PHONE TOGGLE] toggle найден?', !!toggle);
-    console.log('[PHONE TOGGLE] commentsBlock найден?', !!commentsBlock);
-    console.log('[PHONE TOGGLE] dmBlock найден?', !!dmBlock);
-
     function updatePhoneScreen() {
-      console.log(
-        '[PHONE TOGGLE] updatePhoneScreen вызван. toggle.checked =',
-        toggle.checked
-      );
-
       if (toggle.checked) {
         commentsBlock.style.display = 'none';
         dmBlock.style.display = 'block';
-        console.log('[PHONE TOGGLE] Показан DM, скрыт Comments');
       } else {
         commentsBlock.style.display = 'block';
         dmBlock.style.display = 'none';
-        console.log('[PHONE TOGGLE] Показан Comments, скрыт DM');
       }
     }
 
     toggle.addEventListener('change', updatePhoneScreen);
-    console.log('[PHONE TOGGLE] Добавлен обработчик change на toggle');
     updatePhoneScreen();
   }
 

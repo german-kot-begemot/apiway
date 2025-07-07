@@ -1828,19 +1828,19 @@ legend {
 }
 
 .icon__mess {
-  top: 16.6%;
+  top: 17.2%;
 }
 
 .icon__ar {
-  bottom: 22.6%;
+  bottom: 20.1%;
 }
 
 .icon__done {
-  bottom: 0;
+  bottom: -1%;
 }
 
 .icon__letter {
-  top: 31.2%;
+  top: 32.2%;
 }
 
 .option {
@@ -2433,7 +2433,8 @@ span.ig-comment__time {
 
 .page__holder__create .popup-content .pop__card {
   max-width: 213px;
-  height: 255px;
+  margin-bottom: 30px;
+  height: 266px;
 }
 
 .page__holder__create .popup-content {
@@ -2443,11 +2444,13 @@ span.ig-comment__time {
   align-items: flex-start;
   border-radius: 24px;
   max-width: 779px;
-  min-height: 89%;
+  max-height: 633px;
   margin-left: -42px;
   width: 779px;
-  padding: 36px 0 0 0;
+  padding: 35px 38px;
   height: auto;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .page__holder__create .pop__card__holder {
@@ -2456,7 +2459,7 @@ span.ig-comment__time {
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 .page__holder__create .popup-content h2 {

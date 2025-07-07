@@ -2,28 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
   /** =========================== БОКОВАЯ ПАНЕЛЬ ============================ */
   const aside = document.querySelector('.aside');
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const aside = document.querySelector('.aside');
-
-    function checkWidth() {
-      if (!aside) return;
-      if (window.innerWidth <= 426) {
-        aside.classList.add('collapsed');
-      } else {
-        aside.classList.remove('collapsed');
-      }
+  function checkWidth() {
+    if (!aside) return;
+    if (window.innerWidth <= 426) {
+      aside.classList.add('collapsed');
+    } else {
+      aside.classList.remove('collapsed');
     }
+  }
 
-    window.addEventListener('resize', checkWidth);
-    checkWidth();
-  });
+  window.addEventListener('resize', checkWidth);
+  checkWidth();
 
   /** =========================== МЕНЮ С ПОИСКОМ ============================ */
-  const menuItems = document.querySelectorAll('.menu_with_search a');
-  menuItems.forEach((item) => {
+  document.querySelectorAll('.menu_with_search a').forEach((item) => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
-      menuItems.forEach((el) => el.classList.remove('it__selected'));
+      document
+        .querySelectorAll('.menu_with_search a')
+        .forEach((el) => el.classList.remove('it__selected'));
       item.classList.add('it__selected');
     });
   });
@@ -40,12 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.dots-wrapper')) {
-      document.querySelectorAll('.dots-menu').forEach((menu) => {
-        menu.style.display = 'none';
-      });
-    }
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dots-menu').forEach((menu) => {
+      menu.style.display = 'none';
+    });
   });
 
   /** =========================== DELETE-МОДАЛКА ============================ */
@@ -70,20 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
   /** =========================== УНИВЕРСАЛЬНЫЕ МОДАЛКИ ============================ */
   function setupModal(modalSelector) {
     document.querySelectorAll(modalSelector).forEach((modal) => {
-      const closeBtns = modal.querySelectorAll('.close__btn');
-
-      closeBtns.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-          modal.style.display = 'none';
-        });
+      modal.querySelectorAll('.close__btn').forEach((btn) => {
+        btn.addEventListener('click', () => (modal.style.display = 'none'));
       });
-
       modal.addEventListener('click', (e) => {
         if (e.target === modal) modal.style.display = 'none';
       });
     });
   }
-
   setupModal('.modal-overlay');
   setupModal('.popup-overlay');
 
@@ -108,29 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /** =========================== TOOLTIP ============================ */
-  document.querySelectorAll('.tooltip-container').forEach((container) => {
-    const tooltip = container.querySelector('.tooltip-text');
-
-    // container.addEventListener('mouseenter', () => {
-    //   const rect = container.getBoundingClientRect();
-    //   tooltip.style.left = `${rect.left}px`;
-    //   tooltip.style.top = `${rect.bottom + 5}px`;
-    //   tooltip.style.visibility = 'visible';
-    //   tooltip.style.opacity = '1';
-    //   tooltip.style.transform = 'translate(0, 0) scale(1)';
-    // });
-
-    // container.addEventListener('mouseleave', () => {
-    //   tooltip.style.visibility = 'hidden';
-    //   tooltip.style.opacity = '0';
-    //   tooltip.style.transform = 'translate(0, 0) scale(0.95)';
-    // });
-  });
-
   /** =========================== СТАТУС INSTAGRAM ============================ */
-  const connected = true;
-  // const connected = false; // для тестирования
+  const connected = true; // или false для теста
   const statusEl = document.getElementById('status');
   const createBtn = document.getElementById('createBtnAuto');
   if (statusEl && createBtn) {
@@ -145,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /** =========================== ВЫПАДАЮЩИЙ СПИСОК АККАУНТОВ ============================ */
+  /** =========================== ДРОПДАУН АККАУНТОВ ============================ */
   const akk = document.querySelector('.akk');
   const dropdown = document.querySelector('.dropdown-list');
   if (akk && dropdown) {
@@ -187,82 +155,48 @@ document.addEventListener('DOMContentLoaded', () => {
   /** =========================== ПРЕДПРОСМОТР ИЗОБРАЖЕНИЯ ============================ */
   const fileInput = document.getElementById('fileInput');
   const previewContainer = document.getElementById('previewContainer');
+  if (fileInput && previewContainer) {
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          previewContainer.innerHTML = `
+            <div class="preview-wrapper">
+              <img src="${e.target.result}" alt="Preview" />
+              <button class="remove-preview" type="button" aria-label="Remove preview">
+                <img src="images/cl.svg" alt="Close" />
+              </button>
+            </div>`;
+          document.querySelector('.icon').style.display = 'none';
+          document.querySelector('.upload-text').style.display = 'none';
+          document.querySelector('.browse-button').style.display = 'none';
+          document.querySelector('.file-upload').style.border = 'none';
 
-  fileInput.addEventListener('change', () => {
-    const file = fileInput.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        previewContainer.innerHTML = `
-          <div class="preview-wrapper">
-            <img src="${e.target.result}" alt="Preview" />
-            <button class="remove-preview" type="button" aria-label="Remove preview">
-              <img src="images/cl.svg" alt="Close" />
-            </button>
-          </div>
-        `;
-        document.querySelector('.icon').style.display = 'none';
-        document.querySelector('.upload-text').style.display = 'none';
-        document.querySelector('.browse-button').style.display = 'none';
-        document.querySelector('.file-upload').style.border = 'none';
-
-        document
-          .querySelector('.remove-preview')
-          .addEventListener('click', () => {
-            previewContainer.innerHTML = '';
-            fileInput.value = '';
-            document.querySelector('.icon').style.display = '';
-            document.querySelector('.upload-text').style.display = '';
-            document.querySelector('.browse-button').style.display = '';
-            document.querySelector('.file-upload').style.border = '';
-          });
-      };
-      reader.readAsDataURL(file);
-    } else {
-      previewContainer.innerHTML = '';
-    }
-  });
+          previewContainer
+            .querySelector('.remove-preview')
+            .addEventListener('click', () => {
+              previewContainer.innerHTML = '';
+              fileInput.value = '';
+              document.querySelector('.icon').style.display = '';
+              document.querySelector('.upload-text').style.display = '';
+              document.querySelector('.browse-button').style.display = '';
+              document.querySelector('.file-upload').style.border = '';
+            });
+        };
+        reader.readAsDataURL(file);
+      } else {
+        previewContainer.innerHTML = '';
+      }
+    });
+  }
 
   /** =========================== ВЫБОР ОПЦИИ LIKE ============================ */
-  // document.querySelectorAll('.option').forEach((option) => {
-  //   option.addEventListener('click', () => {
-  //     const chosen = document.createElement('div');
-  //     chosen.classList.add('option__choosed');
-  //     chosen.textContent = option.textContent;
-
-  //     const removeBtn = document.createElement('span');
-  //     removeBtn.classList.add('remove');
-  //     removeBtn.innerHTML = `
-  //     <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-  //       <path fill-rule="evenodd" clip-rule="evenodd" d="M0.208955 0.718069C0.34279 0.584155 0.524283 0.508934 0.713519 0.508934C0.902756 0.508934 1.08425 0.584155 1.21808 0.718069L4.99551 4.49877L8.77296 0.718069C8.83883 0.649841 8.91755 0.595427 9.00462 0.557991C9.09169 0.520555 9.18539 0.500855 9.2801 0.500027C9.37487 0.499205 9.46886 0.517277 9.55657 0.553191C9.64428 0.589105 9.72393 0.642148 9.79094 0.709212C9.85795 0.776276 9.91098 0.856026 9.94688 0.943812C9.9827 1.0316 10.0008 1.12565 9.99998 1.2205C9.99912 1.31534 9.97942 1.40907 9.94203 1.49621C9.90463 1.58335 9.85025 1.66217 9.78209 1.72806L6.00464 5.50877L9.78209 9.28948C9.91212 9.42419 9.98406 9.60462 9.98242 9.7919C9.98078 9.97919 9.90577 10.1583 9.77338 10.2908C9.64107 10.4232 9.46208 10.4983 9.27496 10.5C9.08783 10.5016 8.90756 10.4296 8.77296 10.2995L4.99551 6.51877L1.21808 10.2995C1.08349 10.4296 0.903213 10.5016 0.716089 10.5C0.528965 10.4983 0.349969 10.4232 0.217648 10.2908C0.0853265 10.1583 0.0102699 9.97919 0.00864985 9.7919C0.00702268 9.60462 0.0789532 9.42419 0.208955 9.28948L3.98639 5.50877L0.208955 1.72806C0.0751636 1.59412 0 1.41247 0 1.22306C0 1.03366 0.0751636 0.852012 0.208955 0.718069Z" fill="#777777"/>
-  //     </svg>`;
-
-  //     removeBtn.addEventListener('click', () => {
-  //       document.querySelector('.options__step__block').appendChild(option);
-  //       chosen.remove();
-  //       document.getElementById('detect').innerHTML = '';
-  //     });
-
-  //     chosen.appendChild(removeBtn);
-  //     document.getElementById('input-like').appendChild(chosen);
-
-  //     const detectBlock = document.getElementById('detect');
-  //     detectBlock.innerHTML = '';
-  //     const clone = document.createElement('div');
-  //     clone.classList.add('option__choosed-detect');
-  //     clone.textContent = option.textContent;
-  //     detectBlock.appendChild(clone);
-
-  //     option.remove();
-  //   });
-  // });
-
   const toggle = document.getElementById('toggleDetected');
   const detectTextBlock = document.getElementById('detect');
   const detectImgBlock = document.getElementById('detect-img');
   const imageInput = document.getElementById('image');
 
-  // обработка текстовых опций (input-like)
   document.querySelectorAll('.option').forEach((option) => {
     option.addEventListener('click', () => {
       const chosen = document.createElement('div');
@@ -271,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const removeBtn = document.createElement('span');
       removeBtn.classList.add('remove');
+
       removeBtn.innerHTML = `
       <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M0.208955 0.718069C0.34279 0.584155 0.524283 0.508934 0.713519 0.508934C0.902756 0.508934 1.08425 0.584155 1.21808 0.718069L4.99551 4.49877L8.77296 0.718069C8.83883 0.649841 8.91755 0.595427 9.00462 0.557991C9.09169 0.520555 9.18539 0.500855 9.2801 0.500027C9.37487 0.499205 9.46886 0.517277 9.55657 0.553191C9.64428 0.589105 9.72393 0.642148 9.79094 0.709212C9.85795 0.776276 9.91098 0.856026 9.94688 0.943812C9.9827 1.0316 10.0008 1.12565 9.99998 1.2205C9.99912 1.31534 9.97942 1.40907 9.94203 1.49621C9.90463 1.58335 9.85025 1.66217 9.78209 1.72806L6.00464 5.50877L9.78209 9.28948C9.91212 9.42419 9.98406 9.60462 9.98242 9.7919C9.98078 9.97919 9.90577 10.1583 9.77338 10.2908C9.64107 10.4232 9.46208 10.4983 9.27496 10.5C9.08783 10.5016 8.90756 10.4296 8.77296 10.2995L4.99551 6.51877L1.21808 10.2995C1.08349 10.4296 0.903213 10.5016 0.716089 10.5C0.528965 10.4983 0.349969 10.4232 0.217648 10.2908C0.0853265 10.1583 0.0102699 9.97919 0.00864985 9.7919C0.00702268 9.60462 0.0789532 9.42419 0.208955 9.28948L3.98639 5.50877L0.208955 1.72806C0.0751636 1.59412 0 1.41247 0 1.22306C0 1.03366 0.0751636 0.852012 0.208955 0.718069Z" fill="#777777"/>
@@ -285,7 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
       chosen.appendChild(removeBtn);
       document.getElementById('input-like').appendChild(chosen);
 
-      // если тумблер выключен — вставляем в detect текст
       if (!toggle.checked) {
         detectTextBlock.innerHTML = '';
         const clone = document.createElement('div');
@@ -298,20 +232,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // обработка загрузки картинки
-  imageInput.addEventListener('change', (event) => {
-    if (toggle.checked && imageInput.files.length > 0) {
-      const file = imageInput.files[0];
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        detectImgBlock.innerHTML = '';
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.alt = 'Uploaded preview';
-        img.style.maxWidth = '100%';
-        detectImgBlock.appendChild(img);
-      };
-      reader.readAsDataURL(file);
+  if (imageInput && toggle && detectImgBlock) {
+    imageInput.addEventListener('change', () => {
+      if (toggle.checked && imageInput.files.length > 0) {
+        const file = imageInput.files[0];
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          detectImgBlock.innerHTML = '';
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.alt = 'Uploaded preview';
+          img.style.maxWidth = '100%';
+          detectImgBlock.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+
+  /** =========================== PHONE SCREEN TOGGLE ============================ */
+  const createContent = document.querySelector('.create__main__content');
+  console.log('[PHONE TOGGLE] .create__main__content найден?', !!createContent);
+
+  if (createContent) {
+    const toggle = createContent.querySelector('#toggleDetected');
+    const commentsBlock = createContent.querySelector(
+      '.phone__screen__comments'
+    );
+    const dmBlock = createContent.querySelector('.phone__screen__dm');
+
+    console.log('[PHONE TOGGLE] toggle найден?', !!toggle);
+    console.log('[PHONE TOGGLE] commentsBlock найден?', !!commentsBlock);
+    console.log('[PHONE TOGGLE] dmBlock найден?', !!dmBlock);
+
+    function updatePhoneScreen() {
+      console.log(
+        '[PHONE TOGGLE] updatePhoneScreen вызван. toggle.checked =',
+        toggle.checked
+      );
+
+      if (toggle.checked) {
+        commentsBlock.style.display = 'none';
+        dmBlock.style.display = 'block';
+        console.log('[PHONE TOGGLE] Показан DM, скрыт Comments');
+      } else {
+        commentsBlock.style.display = 'block';
+        dmBlock.style.display = 'none';
+        console.log('[PHONE TOGGLE] Показан Comments, скрыт DM');
+      }
     }
-  });
+
+    toggle.addEventListener('change', updatePhoneScreen);
+    console.log('[PHONE TOGGLE] Добавлен обработчик change на toggle');
+    updatePhoneScreen();
+  }
 });

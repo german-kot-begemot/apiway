@@ -2561,12 +2561,6 @@ span.ig-comment__time {
   margin-bottom: 24px;
 }
 
-.trigger__content div {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
 .switchers-holder,
 .header_trigger_holder,
 .title_with_search__title {
@@ -2764,7 +2758,7 @@ span.ig-comment__time {
   margin-bottom: 24px;
 }
 
-.trigger__custom-select ul {
+.trigger__custom-select ul.trigger__options {
   position: absolute;
   top: 100%;
   left: 0;
@@ -2784,7 +2778,7 @@ span.ig-comment__time {
   position: relative;
   user-select: none;
   font-size: 20px;
-  max-width: 559px;
+  /* max-width: 559px; */
 }
 
 .trigger__custom-select.open .trigger__options {
@@ -3465,5 +3459,11 @@ span.ig-comment__time {
   .trigger__block,
   .trigger__custom-select {
     font-size: 14px;
+  }
+
+  .trigger__form-field {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }

@@ -303,7 +303,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.trigger__custom-select').forEach((select) => {
     const selected = select.querySelector('.trigger__selected');
     const options = select.querySelectorAll('.trigger__options li');
-    const input = select.parentElement.querySelector("input[type='hidden']");
+    const input = select
+      .closest('.trigger__form-group')
+      ?.querySelector("input[type='hidden']");
 
     selected.onclick = (e) => {
       e.stopPropagation();
@@ -314,15 +316,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     options.forEach((opt) => {
-      opt.onclick = () => {
+      opt.onclick = (e) => {
+        e.stopPropagation();
         selected.textContent = opt.textContent.trim();
-        input.value = opt.dataset.value;
+        if (input) input.value = opt.dataset.value;
         select.classList.remove('open');
       };
     });
   });
 
-  /* =========================== ЗАКРЫТИЕ КАСТОМНОГО SELECT ============================ */
   document.addEventListener('click', () => {
     document
       .querySelectorAll('.trigger__custom-select')

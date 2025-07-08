@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="page__holder page__holder__trigger">
-      <aside class="aside">
+      <aside class="aside aside--collapsed">
         <div class="aside__header">
           <a href="/app/ways" class="logo">
             <img
@@ -87,88 +87,92 @@
               </li>
             </ul>
           </nav>
-        </div>
 
-        <footer class="aside__footer aside__footer_dashboard">
-          <div class="data-transfer mob__hidden">
-            <div class="data-transfer__label data-transfer__label_dashboard">
-              <p>0 of 10M data transfer</p>
-              <div class="tooltip-container">
-                <img src="images/info.svg" alt="info" class="info-img" />
-                <div class="tooltip-text">
-                  <p>
-                    Our system counts an automation ‘run’ every time a trigger
-                    is activated, whether or not the automation’s actions are
-                    executed successfully
-                  </p>
-                  <img src="images/tr-down.svg" alt="" class="tooltip-arrow" />
+          <footer class="aside__footer aside__footer_dashboard">
+            <div class="data-transfer mob__hidden">
+              <div class="data-transfer__label data-transfer__label_dashboard">
+                <p>0 of 10M data transfer</p>
+                <div class="tooltip-container">
+                  <img src="images/info.svg" alt="info" class="info-img" />
+                  <div class="tooltip-text">
+                    <p>
+                      Our system counts an automation ‘run’ every time a trigger
+                      is activated, whether or not the automation’s actions are
+                      executed successfully
+                    </p>
+                    <img
+                      src="images/tr-down.svg"
+                      alt=""
+                      class="tooltip-arrow"
+                    />
+                  </div>
                 </div>
               </div>
+              <div class="data-transfer__bar">
+                <div class="data-transfer__progress"></div>
+              </div>
             </div>
-            <div class="data-transfer__bar">
-              <div class="data-transfer__progress"></div>
+
+            <button class="upgrade_plan mob__hidden">Upgrade plan</button>
+
+            <div class="footer_links">
+              <a href="#" class="footer_link">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="mysvg svg-help"
+                >
+                  <path
+                    d="M10 14.4999V14.5395M7.75098 7.22996C7.75098 5.96386 8.75834 4.93748 10.001 4.93748C11.2436 4.93748 12.251 5.96386 12.251 7.22996C12.251 8.49606 11.2436 9.52244 10.001 9.52244C10.001 9.52244 10 10.2067 10 11.0508M19 4.37498L19 15.625C19 17.489 17.489 19 15.625 19H4.375C2.51104 19 1 17.489 1 15.625V4.37498C1 2.51103 2.51104 1 4.375 1H15.625C17.489 1 19 2.51103 19 4.37498Z"
+                    stroke="#242424"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="aside_transform__text footer_link_text mob__hidden"
+                  >Help</span
+                >
+
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="mysvg svg-arrow mob__hidden"
+                >
+                  <path
+                    d="M2 1C2 0.734784 2.10536 0.48043 2.2929 0.292893C2.48043 0.105357 2.73479 0 3 0H11C11.2652 0 11.5196 0.105357 11.7071 0.292893C11.8946 0.48043 12 0.734784 12 1V9C12 9.26522 11.8946 9.51957 11.7071 9.70711C11.5196 9.89464 11.2652 10 11 10C10.7348 10 10.4804 9.89464 10.2929 9.70711C10.1054 9.51957 10 9.26522 10 9V3.414L1.707 11.707C1.5184 11.8892 1.2658 11.99 1.0036 11.9877C0.741405 11.9854 0.490593 11.8802 0.305184 11.6948C0.119776 11.5094 0.0146072 11.2586 0.0123288 10.9964C0.0100503 10.7342 0.110845 10.4816 0.293003 10.293L8.586 2H3C2.73479 2 2.48043 1.89464 2.2929 1.70711C2.10536 1.51957 2 1.26522 2 1Z"
+                    fill="#242424"
+                  />
+                </svg>
+              </a>
+
+              <a href="#" class="footer_link">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="mysvg"
+                >
+                  <path
+                    d="M10 20C7.32891 20 4.8177 18.9598 2.92891 17.0711C1.0402 15.1823 0 12.6711 0 10C0 7.32891 1.0402 4.8177 2.92891 2.92891C4.8177 1.0402 7.32891 0 10 0C12.6711 0 15.1823 1.0402 17.0711 2.92891C18.9598 4.8177 20 7.32891 20 10C20 12.6711 18.9598 15.1823 17.0711 17.0711C15.1823 18.9598 12.6711 20 10 20ZM10 1.5625C5.34754 1.5625 1.5625 5.34754 1.5625 10C1.5625 14.6525 5.34754 18.4375 10 18.4375C14.6525 18.4375 18.4375 14.6525 18.4375 10C18.4375 5.34754 14.6525 1.5625 10 1.5625ZM9.96094 10.7422C7.89316 10.7422 6.21094 9.05996 6.21094 6.99219C6.21094 4.92441 7.89316 3.24219 9.96094 3.24219C12.0287 3.24219 13.7109 4.92441 13.7109 6.99219C13.7109 9.05996 12.0287 10.7422 9.96094 10.7422ZM9.96094 4.80469C8.75473 4.80469 7.77344 5.78602 7.77344 6.99219C7.77344 8.19836 8.75473 9.17969 9.96094 9.17969C11.1671 9.17969 12.1484 8.19836 12.1484 6.99219C12.1484 5.78602 11.1671 4.80469 9.96094 4.80469ZM14.9106 15.2919C15.2445 15.0185 15.2934 14.5262 15.02 14.1924C13.9153 12.8438 12.283 12.0703 10.5416 12.0703H9.61465C7.87328 12.0703 6.24098 12.8438 5.13629 14.1925C4.86289 14.5262 4.91184 15.0185 5.24566 15.2919C5.57945 15.5654 6.07168 15.5163 6.34512 15.1826C7.15176 14.1977 8.34348 13.6328 9.61465 13.6328H10.5416C11.8128 13.6328 13.0045 14.1977 13.8112 15.1825C13.9657 15.3711 14.1899 15.4688 14.416 15.4688C14.5902 15.4688 14.7654 15.4108 14.9106 15.2919Z"
+                    fill="#242424"
+                  />
+                </svg>
+                <span class="aside_transform__text footer_link_text mob__hidden"
+                  >Account</span
+                >
+              </a>
             </div>
-          </div>
-
-          <button class="upgrade_plan mob__hidden">Upgrade plan</button>
-
-          <div class="footer_links">
-            <a href="#" class="footer_link">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="mysvg svg-help"
-              >
-                <path
-                  d="M10 14.4999V14.5395M7.75098 7.22996C7.75098 5.96386 8.75834 4.93748 10.001 4.93748C11.2436 4.93748 12.251 5.96386 12.251 7.22996C12.251 8.49606 11.2436 9.52244 10.001 9.52244C10.001 9.52244 10 10.2067 10 11.0508M19 4.37498L19 15.625C19 17.489 17.489 19 15.625 19H4.375C2.51104 19 1 17.489 1 15.625V4.37498C1 2.51103 2.51104 1 4.375 1H15.625C17.489 1 19 2.51103 19 4.37498Z"
-                  stroke="#242424"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span class="aside_transform__text footer_link_text mob__hidden"
-                >Help</span
-              >
-
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="mysvg svg-arrow mob__hidden"
-              >
-                <path
-                  d="M2 1C2 0.734784 2.10536 0.48043 2.2929 0.292893C2.48043 0.105357 2.73479 0 3 0H11C11.2652 0 11.5196 0.105357 11.7071 0.292893C11.8946 0.48043 12 0.734784 12 1V9C12 9.26522 11.8946 9.51957 11.7071 9.70711C11.5196 9.89464 11.2652 10 11 10C10.7348 10 10.4804 9.89464 10.2929 9.70711C10.1054 9.51957 10 9.26522 10 9V3.414L1.707 11.707C1.5184 11.8892 1.2658 11.99 1.0036 11.9877C0.741405 11.9854 0.490593 11.8802 0.305184 11.6948C0.119776 11.5094 0.0146072 11.2586 0.0123288 10.9964C0.0100503 10.7342 0.110845 10.4816 0.293003 10.293L8.586 2H3C2.73479 2 2.48043 1.89464 2.2929 1.70711C2.10536 1.51957 2 1.26522 2 1Z"
-                  fill="#242424"
-                />
-              </svg>
-            </a>
-
-            <a href="#" class="footer_link">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="mysvg"
-              >
-                <path
-                  d="M10 20C7.32891 20 4.8177 18.9598 2.92891 17.0711C1.0402 15.1823 0 12.6711 0 10C0 7.32891 1.0402 4.8177 2.92891 2.92891C4.8177 1.0402 7.32891 0 10 0C12.6711 0 15.1823 1.0402 17.0711 2.92891C18.9598 4.8177 20 7.32891 20 10C20 12.6711 18.9598 15.1823 17.0711 17.0711C15.1823 18.9598 12.6711 20 10 20ZM10 1.5625C5.34754 1.5625 1.5625 5.34754 1.5625 10C1.5625 14.6525 5.34754 18.4375 10 18.4375C14.6525 18.4375 18.4375 14.6525 18.4375 10C18.4375 5.34754 14.6525 1.5625 10 1.5625ZM9.96094 10.7422C7.89316 10.7422 6.21094 9.05996 6.21094 6.99219C6.21094 4.92441 7.89316 3.24219 9.96094 3.24219C12.0287 3.24219 13.7109 4.92441 13.7109 6.99219C13.7109 9.05996 12.0287 10.7422 9.96094 10.7422ZM9.96094 4.80469C8.75473 4.80469 7.77344 5.78602 7.77344 6.99219C7.77344 8.19836 8.75473 9.17969 9.96094 9.17969C11.1671 9.17969 12.1484 8.19836 12.1484 6.99219C12.1484 5.78602 11.1671 4.80469 9.96094 4.80469ZM14.9106 15.2919C15.2445 15.0185 15.2934 14.5262 15.02 14.1924C13.9153 12.8438 12.283 12.0703 10.5416 12.0703H9.61465C7.87328 12.0703 6.24098 12.8438 5.13629 14.1925C4.86289 14.5262 4.91184 15.0185 5.24566 15.2919C5.57945 15.5654 6.07168 15.5163 6.34512 15.1826C7.15176 14.1977 8.34348 13.6328 9.61465 13.6328H10.5416C11.8128 13.6328 13.0045 14.1977 13.8112 15.1825C13.9657 15.3711 14.1899 15.4688 14.416 15.4688C14.5902 15.4688 14.7654 15.4108 14.9106 15.2919Z"
-                  fill="#242424"
-                />
-              </svg>
-              <span class="aside_transform__text footer_link_text mob__hidden"
-                >Account</span
-              >
-            </a>
-          </div>
-        </footer>
+          </footer>
+        </div>
       </aside>
 
       <div class="integration__content trigger__content">
@@ -180,7 +184,7 @@
 
           <div class="switchers-holder">
             <button type="submit" class="save__exit__btn" id="openPopupBtn">
-              <span class="aside_transform__text mob__hidden">Save & exit</span>
+              <span>Save & exit</span>
             </button>
             <button type="submit" class="tr__test__btn" id="openPopupBtn">
               <svg
@@ -195,7 +199,7 @@
                   fill="#242424"
                 />
               </svg>
-              <span class="aside_transform__text mob__hidden">Test</span>
+              <span class="test__button">Test</span>
             </button>
             <label class="toggle-switch toggle-tiger">
               <input type="checkbox" />
@@ -210,7 +214,21 @@
           <!-- Step 1 -->
           <div class="trigger__step trigger__step__1">
             <div class="step__1__top">
-              <h2 class="trigger__title">Step 1. Setup a trigger</h2>
+              <div class="tr__header__wrapper">
+                <h2 class="trigger__title">Step 1. Setup a trigger</h2>
+                <svg
+                  width="21"
+                  height="18"
+                  viewBox="0 0 21 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 0C16.9705 7.98867e-05 21 4.02949 21 9C21 13.9705 16.9705 17.9999 12 18C10.1524 18.0061 8.34866 17.4364 6.83984 16.3701C6.71929 16.2833 6.64264 16.148 6.62988 16C6.61796 15.856 6.66888 15.714 6.76953 15.6104L7.49023 14.8799C7.65926 14.7128 7.92266 14.688 8.12012 14.8203C9.26625 15.5927 10.6179 16.0036 12 16C15.8659 15.9999 19 12.8659 19 9C19 5.13406 15.8659 2.00008 12 2C8.13401 2 5 5.13401 5 9H7.35938C7.49496 8.99803 7.62565 9.05273 7.71973 9.15039L7.91992 9.34961C8.01458 9.44349 8.06738 9.57176 8.06738 9.70508C8.06736 9.83825 8.0144 9.96573 7.91992 10.0596L4.38965 13.5996C4.19183 13.7914 3.8775 13.7914 3.67969 13.5996L0.149414 10.0596C0.0550482 9.96575 0.00197391 9.83816 0.00195312 9.70508C0.00195313 9.57177 0.0547739 9.44349 0.149414 9.34961L0.349609 9.15039C0.443685 9.05273 0.574375 8.99803 0.709961 9H3C3 4.02944 7.02944 0 12 0ZM12 7C13.1045 7.00008 14 7.89548 14 9C14 10.1045 13.1045 10.9999 12 11C10.8954 11 10 10.1046 10 9C10 7.89543 10.8954 7 12 7Z"
+                    fill="#777777"
+                  />
+                </svg>
+              </div>
 
               <!-- Trigger App -->
               <div class="trigger__form-group">
@@ -343,7 +361,21 @@
 
           <!-- Step 2 -->
           <div class="trigger__step trigger__step__2">
-            <h2 class="trigger__title">Step 2. Setup an action</h2>
+            <div class="tr__header__wrapper">
+              <h2 class="trigger__title">Step 1. Setup a trigger</h2>
+              <svg
+                width="21"
+                height="18"
+                viewBox="0 0 21 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0C16.9705 7.98867e-05 21 4.02949 21 9C21 13.9705 16.9705 17.9999 12 18C10.1524 18.0061 8.34866 17.4364 6.83984 16.3701C6.71929 16.2833 6.64264 16.148 6.62988 16C6.61796 15.856 6.66888 15.714 6.76953 15.6104L7.49023 14.8799C7.65926 14.7128 7.92266 14.688 8.12012 14.8203C9.26625 15.5927 10.6179 16.0036 12 16C15.8659 15.9999 19 12.8659 19 9C19 5.13406 15.8659 2.00008 12 2C8.13401 2 5 5.13401 5 9H7.35938C7.49496 8.99803 7.62565 9.05273 7.71973 9.15039L7.91992 9.34961C8.01458 9.44349 8.06738 9.57176 8.06738 9.70508C8.06736 9.83825 8.0144 9.96573 7.91992 10.0596L4.38965 13.5996C4.19183 13.7914 3.8775 13.7914 3.67969 13.5996L0.149414 10.0596C0.0550482 9.96575 0.00197391 9.83816 0.00195312 9.70508C0.00195313 9.57177 0.0547739 9.44349 0.149414 9.34961L0.349609 9.15039C0.443685 9.05273 0.574375 8.99803 0.709961 9H3C3 4.02944 7.02944 0 12 0ZM12 7C13.1045 7.00008 14 7.89548 14 9C14 10.1045 13.1045 10.9999 12 11C10.8954 11 10 10.1046 10 9C10 7.89543 10.8954 7 12 7Z"
+                  fill="#777777"
+                />
+              </svg>
+            </div>
 
             <!-- Action App -->
             <label class="trigger__label" for="action_app"
@@ -410,7 +442,7 @@
                   fill="#242424"
                 />
               </svg>
-              <span class="aside_transform__text mob__hidden">Test</span>
+              <span class="test__btn">Test</span>
             </button>
 
             <!-- Update Fields -->

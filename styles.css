@@ -1418,7 +1418,8 @@ legend {
 }
 
 .sts__btns button:hover,
-.point__holder button:hover {
+.point__holder button:hover,
+.page__holder__trigger button:hover {
   box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
   cursor: pointer;
 }
@@ -2560,6 +2561,12 @@ span.ig-comment__time {
   margin-bottom: 24px;
 }
 
+.trigger__content div {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .switchers-holder,
 .header_trigger_holder,
 .title_with_search__title {
@@ -2634,11 +2641,9 @@ span.ig-comment__time {
   border: 1px solid var(--grey);
   border-radius: 12px;
   padding: 8px 12px 8px 16px;
-  /* width: 559px; */
   height: 48px;
   background: #fff;
   font-family: var(--font-family);
-
   font-size: 20px;
   line-height: 140%;
   letter-spacing: -0.03em;
@@ -2646,8 +2651,9 @@ span.ig-comment__time {
 }
 
 .trigger__select:hover,
-.trigger__custom-select {
+.trigger__custom-select:hover {
   border: 1px solid var(--yellow);
+  cursor: pointer;
 }
 
 .trigger__block {
@@ -2793,7 +2799,7 @@ span.ig-comment__time {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: block; /* обязательно для text-overflow */
+  display: block;
   max-width: 100%;
 }
 
@@ -2814,6 +2820,43 @@ span.ig-comment__time {
   display: flex;
   align-self: end;
   align-items: center;
+  margin-top: 27px;
+}
+
+.aside--collapsed {
+  max-width: 80px;
+}
+
+.aside--collapsed .mob__hidden,
+.aside--collapsed .aside_transform__text {
+  display: none;
+}
+
+.aside--collapsed form {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: 48px;
+  height: 40px;
+}
+
+.aside--collapsed .aside_nav {
+  width: 44px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aside--collapsed .personal_menu {
+  padding: 0;
+}
+
+.tr__header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* Responsive styles */
@@ -2978,6 +3021,27 @@ span.ig-comment__time {
 
   .create__main {
     display: none;
+  }
+
+  .trigger__form,
+  .header_trigger_holder {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .trigger__step {
+    width: 100%;
+  }
+
+  .title_with_search__title,
+  .switchers-holder {
+    width: 100%;
+  }
+
+  .switchers-holder {
+    justify-content: start;
   }
 }
 
@@ -3384,5 +3448,22 @@ span.ig-comment__time {
     width: auto;
     overflow: visible;
     padding: 9px;
+  }
+
+  .switchers-holder {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .switchers-holder button {
+    width: 50%;
+  }
+
+  .trigger__content div,
+  .trigger__select,
+  .trigger__form-field,
+  .trigger__block,
+  .trigger__custom-select {
+    font-size: 14px;
   }
 }

@@ -322,9 +322,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* =========================== ЗАКРЫТИЕ КАСТОМНОГО SELECT ============================ */
   document.addEventListener('click', () => {
     document
       .querySelectorAll('.trigger__custom-select')
       .forEach((s) => s.classList.remove('open'));
+  });
+
+  /** =========================== КОЛЛАПС БОКОВОЙ ПАНЕЛИ ============================ */
+  document.addEventListener('DOMContentLoaded', function () {
+    const aside = document.querySelector('.aside');
+    const toggleBtn = document.querySelector('.aside-toggle');
+
+    toggleBtn?.addEventListener('click', () => {
+      aside.classList.toggle('aside--collapsed');
+    });
+    function checkWidth() {
+      if (window.innerWidth <= 426) {
+        aside.classList.add('aside--collapsed');
+      } else {
+        aside.classList.remove('aside--collapsed');
+      }
+    }
+
+    window.addEventListener('resize', checkWidth);
+    checkWidth();
   });
 });

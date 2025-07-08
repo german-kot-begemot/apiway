@@ -298,4 +298,33 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  /** =========================== КАСТОМНЫЙ SELECT ============================ */
+  document.querySelectorAll('.trigger__custom-select').forEach((select) => {
+    const selected = select.querySelector('.trigger__selected');
+    const options = select.querySelectorAll('.trigger__options li');
+    const input = select.parentElement.querySelector("input[type='hidden']");
+
+    selected.onclick = (e) => {
+      e.stopPropagation();
+      document
+        .querySelectorAll('.trigger__custom-select')
+        .forEach((s) => s !== select && s.classList.remove('open'));
+      select.classList.toggle('open');
+    };
+
+    options.forEach((opt) => {
+      opt.onclick = () => {
+        selected.textContent = opt.textContent.trim();
+        input.value = opt.dataset.value;
+        select.classList.remove('open');
+      };
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document
+      .querySelectorAll('.trigger__custom-select')
+      .forEach((s) => s.classList.remove('open'));
+  });
 });

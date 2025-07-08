@@ -261,7 +261,7 @@ legend {
   -ms-flex-pack: start;
   justify-content: flex-start;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .aside__header {
@@ -301,6 +301,7 @@ legend {
   padding-top: 24px;
   align-items: center;
   gap: 16px;
+  height: 100%;
 }
 
 .create_btn {
@@ -1756,11 +1757,12 @@ legend {
 .create__main__content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  flex: 1;
+  /* flex: 1; */
   overflow-y: auto;
   margin: 9px;
+  height: 100%;
 }
 
 .form-progress {
@@ -3085,7 +3087,7 @@ span.ig-comment__time {
     display: flex;
     justify-content: space-between;
     height: 100%;
-    padding-bottom: 50%;
+    padding: 0;
   }
 
   .akk {
@@ -3103,6 +3105,8 @@ span.ig-comment__time {
   .aside__body {
     padding: 0;
     margin: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
   }
 
   .aside__header,
@@ -3116,6 +3120,14 @@ span.ig-comment__time {
     pointer-events: none;
     overflow: hidden;
     transition: opacity 0.3s ease;
+  }
+
+  .aside--collapsed form {
+    justify-content: center;
+  }
+
+  .aside.collapsed {
+    padding: 0;
   }
 
   .aside_nav {
@@ -3139,6 +3151,11 @@ span.ig-comment__time {
   .aside__footer_dashboard {
     margin: 0;
     width: 46px;
+    padding: 0;
+  }
+
+  .footer_links a:first-child {
+    margin-bottom: 0;
   }
 
   .toggle-switch-handle {
@@ -3449,7 +3466,8 @@ span.ig-comment__time {
     align-items: start;
   }
 
-  .switchers-holder button {
+  .switchers-holder button,
+  .trigger__step__2 .tr__test__btn {
     width: 50%;
   }
 

@@ -1432,7 +1432,9 @@ legend {
 .point__holder button:hover,
 .page__holder__trigger button:hover,
 .temp__footer__app__connected button:hover,
-.linkApp__btns button:hover {
+.linkApp__btns button:hover,
+.det__btns__holder button:hover,
+.linkApp__add__btn:hover {
   box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
   cursor: pointer;
 }
@@ -3418,12 +3420,24 @@ span.ig-comment__time {
   .switchers-holder {
     justify-content: start;
   }
+
+  .linkApp__card,
+  .linkApp_holder {
+    flex-direction: column;
+    align-items: start;
+    height: auto;
+    gap: 16px;
+  }
 }
 
 @media (max-width: 945px) {
   .search__icon {
     top: 20%;
     left: 2%;
+  }
+
+  .linkApp__content .search__icon {
+    top: 50%;
   }
 }
 
@@ -3708,6 +3722,10 @@ span.ig-comment__time {
     margin: 10px 0;
   }
 
+  .linkApp__card h3 {
+    font-size: 15px;
+  }
+
   .integration__content h1,
   .temp__footer p {
     margin: 0;
@@ -3876,5 +3894,15 @@ span.ig-comment__time {
   .app__conn__card {
     width: 100%;
     max-width: 320px;
+  }
+
+  .linkApp__img__wrapper,
+  .linkApp__btns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .linkApp__cards {
+    margin: 10px 0;
   }
 }

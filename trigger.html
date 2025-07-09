@@ -364,7 +364,7 @@
           <!-- Step 2 -->
           <div class="trigger__step trigger__step__2">
             <div class="tr__header__wrapper">
-              <h2 class="trigger__title">Step 1. Setup a trigger</h2>
+              <h2 class="trigger__title">Step 2. Setup an action</h2>
               <svg
                 width="21"
                 height="18"
@@ -380,12 +380,55 @@
             </div>
 
             <!-- Action App -->
-            <label class="trigger__label" for="action_app"
+            <!-- <label class="trigger__label" for="action_app"
               >Action app&#42;
             </label>
             <select id="action_app" name="action_app" class="trigger__select">
               <option value="google_sheets">GoogleSheets</option>
-            </select>
+            </select> -->
+
+            <div class="trigger__form-group">
+              <div class="trigger__label">Action app &#42;</div>
+
+              <div class="trigger__custom-select" tabindex="0">
+                <div class="trigger__selected">
+                  <div class="tr-sel-step2">
+                    <svg
+                      width="25"
+                      height="32"
+                      viewBox="0 0 25 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M24.3968 31.4195C24.733 31.0486 24.9309 30.5452 24.9309 30.0201V9.73629L16.1686 0H1.81953C1.58218 0 1.34488 0.0514187 1.12731 0.150315C0.899846 0.2502 0.7022 0.396578 0.534077 0.580525C0.365954 0.764471 0.227354 0.983025 0.138348 1.22334C0.0493418 1.46366 0 1.72178 0 1.98187V30.0221C0 30.5472 0.19783 31.0506 0.534077 31.4214C0.870323 31.7923 1.33494 32 1.81953 32H23.1111C23.5957 32 24.0506 31.7913 24.3968 31.4195ZM5.49843 26.5306H19.3827V15.213H5.49843V26.5306ZM13.1823 18.8266V16.8448L17.9091 16.8487V18.8266H13.1823ZM13.1823 21.9666V20.0737L17.9091 20.0648V21.9666H13.1823ZM13.1823 24.9265V23.1741L17.9091 23.1642V24.9265H13.1823ZM11.6988 23.1642V24.9166H6.97197V23.1642H11.6988ZM11.6988 20.0648V21.9468L6.97197 21.9557V20.0648H11.6988ZM11.6988 16.8448V18.8464L6.97197 18.8266V16.8448H11.6988Z"
+                        fill="#23A566"
+                      />
+                    </svg>
+                    Select field
+                  </div>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.8337 5.58317V6.4165C11.8337 6.64662 11.6471 6.83317 11.417 6.83317H6.83366V11.4165C6.83366 11.6466 6.64711 11.8332 6.41699 11.8332H5.58366C5.35354 11.8332 5.16699 11.6466 5.16699 11.4165V6.83317H0.583659C0.35354 6.83317 0.166992 6.64662 0.166992 6.4165V5.58317C0.166992 5.35305 0.35354 5.1665 0.583659 5.1665H5.16699V0.583171C5.16699 0.353052 5.35354 0.166504 5.58366 0.166504H6.41699C6.64711 0.166504 6.83366 0.353052 6.83366 0.583171V5.1665H11.417C11.6471 5.1665 11.8337 5.35305 11.8337 5.58317Z"
+                      fill="#242424"
+                    />
+                  </svg>
+                </div>
+                <ul class="trigger__options">
+                  <li data-value="created_time">GoogleSheets</li>
+                </ul>
+              </div>
+
+              <input type="hidden" name="goo-sheets" id="goo-sheets" value="" />
+            </div>
 
             <!-- Action Account -->
             <div class="trigger__label" for="trigger_account">Account&#42;</div>
@@ -499,7 +542,21 @@
                 <div class="trigger__label">Col 1</div>
 
                 <div class="trigger__custom-select" tabindex="0">
-                  <div class="trigger__selected">Select field</div>
+                  <div class="trigger__selected">
+                    Select field
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.8337 5.58317V6.4165C11.8337 6.64662 11.6471 6.83317 11.417 6.83317H6.83366V11.4165C6.83366 11.6466 6.64711 11.8332 6.41699 11.8332H5.58366C5.35354 11.8332 5.16699 11.6466 5.16699 11.4165V6.83317H0.583659C0.35354 6.83317 0.166992 6.64662 0.166992 6.4165V5.58317C0.166992 5.35305 0.35354 5.1665 0.583659 5.1665H5.16699V0.583171C5.16699 0.353052 5.35354 0.166504 5.58366 0.166504H6.41699C6.64711 0.166504 6.83366 0.353052 6.83366 0.583171V5.1665H11.417C11.6471 5.1665 11.8337 5.35305 11.8337 5.58317Z"
+                        fill="#242424"
+                      />
+                    </svg>
+                  </div>
                   <ul class="trigger__options">
                     <li data-value="created_time">
                       Created Time: 2024-09-19 T15:23:45+00:00
@@ -520,7 +577,21 @@
                 <div class="trigger__label">Col 2</div>
 
                 <div class="trigger__custom-select" tabindex="0">
-                  <div class="trigger__selected">Select field</div>
+                  <div class="trigger__selected">
+                    Select field
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.8337 5.58317V6.4165C11.8337 6.64662 11.6471 6.83317 11.417 6.83317H6.83366V11.4165C6.83366 11.6466 6.64711 11.8332 6.41699 11.8332H5.58366C5.35354 11.8332 5.16699 11.6466 5.16699 11.4165V6.83317H0.583659C0.35354 6.83317 0.166992 6.64662 0.166992 6.4165V5.58317C0.166992 5.35305 0.35354 5.1665 0.583659 5.1665H5.16699V0.583171C5.16699 0.353052 5.35354 0.166504 5.58366 0.166504H6.41699C6.64711 0.166504 6.83366 0.353052 6.83366 0.583171V5.1665H11.417C11.6471 5.1665 11.8337 5.35305 11.8337 5.58317Z"
+                        fill="#242424"
+                      />
+                    </svg>
+                  </div>
                   <ul class="trigger__options">
                     <li data-value="created_time">
                       Created Time: 2024-09-19 T15:23:45+00:00
@@ -541,7 +612,21 @@
                 <div class="trigger__label">Col 3</div>
 
                 <div class="trigger__custom-select" tabindex="0">
-                  <div class="trigger__selected">Select field</div>
+                  <div class="trigger__selected">
+                    Select field
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.8337 5.58317V6.4165C11.8337 6.64662 11.6471 6.83317 11.417 6.83317H6.83366V11.4165C6.83366 11.6466 6.64711 11.8332 6.41699 11.8332H5.58366C5.35354 11.8332 5.16699 11.6466 5.16699 11.4165V6.83317H0.583659C0.35354 6.83317 0.166992 6.64662 0.166992 6.4165V5.58317C0.166992 5.35305 0.35354 5.1665 0.583659 5.1665H5.16699V0.583171C5.16699 0.353052 5.35354 0.166504 5.58366 0.166504H6.41699C6.64711 0.166504 6.83366 0.353052 6.83366 0.583171V5.1665H11.417C11.6471 5.1665 11.8337 5.35305 11.8337 5.58317Z"
+                        fill="#242424"
+                      />
+                    </svg>
+                  </div>
                   <ul class="trigger__options">
                     <li data-value="created_time">
                       Created Time: 2024-09-19 T15:23:45+00:00

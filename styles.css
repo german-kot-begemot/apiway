@@ -89,6 +89,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('fonts/coolveticarg-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --background: #f3f3f3;
   --main-black: #242424;
@@ -2560,7 +2567,7 @@ span.ig-comment__time {
   font-size: 20px;
   line-height: 140%;
   letter-spacing: -0.03em;
-  margin-bottom: 24px;
+  margin: 0;
 }
 
 .switchers-holder,
@@ -2586,7 +2593,7 @@ span.ig-comment__time {
 
 .trigger__form {
   display: flex;
-  gap: 2%;
+  gap: 6.4%;
   flex: 1;
   width: 100%;
 }
@@ -2716,14 +2723,18 @@ span.ig-comment__time {
 
 .tr__test__btn {
   border-radius: 12px;
-  padding: 8px 16px;
+  padding: 8px 2px;
   width: 90px;
   height: 40px;
   background: var(--yellow);
   border: none;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.tr__test__btn span {
+.header_trigger_holder .tr__test__btn span {
   font-family: var(--font3);
   font-weight: 400;
   font-size: 16px;
@@ -2780,7 +2791,6 @@ span.ig-comment__time {
   position: relative;
   user-select: none;
   font-size: 20px;
-  /* max-width: 559px; */
 }
 
 .trigger__custom-select.open .trigger__options {
@@ -2789,14 +2799,22 @@ span.ig-comment__time {
 }
 
 .trigger__selected {
-  font-size: 16px;
-  color: #000;
-  font-size: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
   max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+}
+
+.trigger__columns .trigger__selected {
+  /* font-family: var(--font3); */
+  color: var(--grey);
 }
 
 .trigger__custom-select .trigger__options li:hover {
@@ -2842,6 +2860,7 @@ span.ig-comment__time {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .aside--collapsed .personal_menu {
@@ -2853,6 +2872,17 @@ span.ig-comment__time {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin: 0 0 26px 0;
+}
+.tr-sel-step2 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+}
+
+.step__1__bottom .trigger__title {
+  margin: 24px 0;
 }
 
 /* Responsive styles */

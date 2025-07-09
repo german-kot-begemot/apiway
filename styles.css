@@ -709,8 +709,10 @@ legend {
   font-weight: 400;
 }
 
-.menu_with_search a:hover {
+.menu_with_search a:hover,
+.account__settings__title:hover {
   color: var(--dark-grey);
+  cursor: pointer;
 }
 
 .menu_with_search a.it__selected {
@@ -1427,7 +1429,8 @@ legend {
 
 .sts__btns button:hover,
 .point__holder button:hover,
-.page__holder__trigger button:hover {
+.page__holder__trigger button:hover,
+.temp__footer__app__connected button:hover {
   box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
   cursor: pointer;
 }
@@ -2831,14 +2834,10 @@ span.ig-comment__time {
 }
 
 .trigger__footer {
-  /* display: flex;
-  align-self: end;
-  align-items: center;
-  margin-top: 27px; */
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 24px;
+  padding: 24px;
 }
 
 .aside--collapsed {
@@ -2928,7 +2927,7 @@ span.ig-comment__time {
   padding: 24px;
   /* width: 78%; */
   width: 320px;
-  /* height: 368px; */
+  height: auto;
   box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);
   background: #fff;
   justify-content: space-between;
@@ -2940,6 +2939,7 @@ span.ig-comment__time {
   align-items: start;
   justify-content: space-between;
   flex-direction: column;
+  margin-top: 37px;
 }
 
 .temp__footer__app__connected div {
@@ -2964,6 +2964,10 @@ span.ig-comment__time {
   letter-spacing: -0.03em;
 }
 
+.temp__footer__app__connected .tr__test__btn {
+  width: 130px;
+}
+
 .temp__footer__app__connected .relink__btn {
   margin-bottom: 16px;
   background: var(--yellow);
@@ -2977,7 +2981,42 @@ span.ig-comment__time {
 .conversions__holder {
   display: flex;
   gap: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 45px;
+}
+
+.conversions__holder svg {
+  min-width: 56px;
+}
+
+.conversions__holder h2 {
+  margin: 0;
+}
+
+.page__holder__app__connected .app__conn__email {
+  margin: 0;
+}
+
+.app__con__content .account__settings__bar {
+  align-items: end;
+}
+
+.page__holder__app__connected .account__settings__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+}
+
+.app__con__content {
+  padding: 6px 39px;
+  height: 100%;
+}
+
+.app__conn__email__holder {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  align-items: center;
 }
 
 /* Responsive styles */

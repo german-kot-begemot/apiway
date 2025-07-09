@@ -2831,10 +2831,14 @@ span.ig-comment__time {
 }
 
 .trigger__footer {
-  display: flex;
+  /* display: flex;
   align-self: end;
   align-items: center;
-  margin-top: 27px;
+  margin-top: 27px; */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 24px;
 }
 
 .aside--collapsed {
@@ -2883,6 +2887,97 @@ span.ig-comment__time {
 
 .step__1__bottom .trigger__title {
   margin: 24px 0;
+}
+
+/* App connected*/
+
+.account__settings__bar {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  gap: 16px;
+}
+
+.account__settings__back-btn {
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: none;
+}
+
+.account__settings__title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  color: var(--main-black);
+}
+
+.app__connected__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 30px;
+}
+
+.app__conn__card {
+  border-radius: 24px;
+  padding: 24px;
+  /* width: 78%; */
+  width: 320px;
+  /* height: 368px; */
+  box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);
+  background: #fff;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.temp__footer__app__connected {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.temp__footer__app__connected div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.temp__footer__app__connected button {
+  border-radius: 12px;
+  padding: 8px 16px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  background: #eeeff1;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+}
+
+.temp__footer__app__connected .relink__btn {
+  margin-bottom: 16px;
+  background: var(--yellow);
+}
+
+.page__holder__app__connected .trigger__link {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.conversions__holder {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
 }
 
 /* Responsive styles */
@@ -3513,5 +3608,19 @@ span.ig-comment__time {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  .temp__footer__app__connected div {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .conversions__holder {
+    margin: 0;
+  }
+
+  .app__conn__card {
+    width: 100%;
+    max-width: 320px;
   }
 }

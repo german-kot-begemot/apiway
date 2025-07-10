@@ -575,6 +575,7 @@ legend {
 
 .aside_nav {
   width: 190px;
+  margin-top: 16px;
 }
 
 .footer_links a:hover,
@@ -2821,7 +2822,6 @@ span.ig-comment__time {
 }
 
 .trigger__columns .trigger__selected {
-  /* font-family: var(--font3); */
   color: var(--grey);
 }
 
@@ -3243,24 +3243,23 @@ span.ig-comment__time {
   box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);
   background: #fff;
   border-radius: 24px;
-  padding: 24px;
+  padding: 22px 24px;
   width: 100%;
   max-width: 736px;
-  margin-bottom: 24px;
+  margin: 25px 0;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 
-.acc__set__title {
+.acc__set__content .acc__set__title {
   font-size: 24px;
   line-height: 150%;
   letter-spacing: -0.03em;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .acc__set__subtitle {
-  margin-bottom: 24px;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -3269,7 +3268,14 @@ span.ig-comment__time {
   align-items: center;
   gap: 32px;
   border-bottom: 2px solid var(--light-grey);
-  padding-bottom: 8px;
+}
+
+.data__block h3 {
+  margin: 1px 0 23px;
+}
+
+.data__block__password h3 {
+  margin: 3px 0 24px;
 }
 
 .acc__set__subtitle .tab {
@@ -3283,6 +3289,10 @@ span.ig-comment__time {
   border-radius: 0;
 }
 
+.acc__set__content {
+  padding: 16px 66px;
+}
+
 .acc__set__content label {
   font-size: 14px;
   line-height: 143%;
@@ -3294,7 +3304,6 @@ span.ig-comment__time {
   font-size: 20px;
   line-height: 140%;
   letter-spacing: -0.03em;
-  /* margin-bottom: 24px; */
 }
 
 .acc__set__content input {
@@ -3303,7 +3312,17 @@ span.ig-comment__time {
   padding: 8px 16px;
   width: 100%;
   height: 40px;
+  margin: 4px 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+#current-password {
   margin: 4px 0 16px;
+}
+
+#new-password {
+  margin: 4px 0 8px;
 }
 
 .acc__set__content button {
@@ -3333,6 +3352,7 @@ span.ig-comment__time {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-bottom: 16px;
 }
 
 .plan__top h3 {
@@ -3340,6 +3360,7 @@ span.ig-comment__time {
   font-size: 22px;
   line-height: 145%;
   letter-spacing: -0.03em;
+  margin: 0;
 }
 
 .plan__details {
@@ -3347,6 +3368,7 @@ span.ig-comment__time {
   font-size: 40px;
   line-height: 130%;
   letter-spacing: -0.03em;
+  margin-bottom: 24px;
 }
 
 .plan__usage {
@@ -3355,7 +3377,7 @@ span.ig-comment__time {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  height: 120px;
   width: 100%;
 }
 
@@ -3364,6 +3386,27 @@ span.ig-comment__time {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.usage__top {
+  gap: 13px;
+}
+
+.usage__top p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+}
+
+.usage__details {
+  margin: 8px 0;
+}
+
+.usage__details p {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
 }
 
 .input__wrapper {
@@ -3385,10 +3428,7 @@ button.toggle__password {
 }
 
 #password__requirements {
-  font-size: 14px;
-  line-height: 143%;
-  letter-spacing: -0.03em;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
 
 #password__requirements .password__rule {
@@ -3397,10 +3437,22 @@ button.toggle__password {
 
 #password__requirements .valid {
   color: var(--green);
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.03em;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
 }
 
 #password__requirements .invalid {
   color: #f85243;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.03em;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
 }
 
 .error__text {
@@ -3415,8 +3467,9 @@ button.toggle__password {
   margin-bottom: 8px;
 }
 
-.social__logins {
+h3.social__logins {
   color: var(--dark-grey);
+  margin-bottom: 2px;
 }
 
 .social-login-option {
@@ -3450,6 +3503,7 @@ button.toggle__password {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  margin-bottom: 64px;
 }
 
 .danger__block button {
@@ -3470,7 +3524,18 @@ button.toggle__password {
   box-shadow: none;
 }
 
+.data__progress__svg {
+  width: 100%;
+}
+
 /* Error Report styles */
+
+.integration__content h2.err__rep__title {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
 
 .err__rep__main {
   box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);
@@ -3507,13 +3572,13 @@ thead th {
 td {
   padding: 16px 24px 0 0;
   vertical-align: top;
+  word-wrap: break-word;
 }
 
 thead th:first-child {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
   padding: 16px;
-  /* display: table-cell; */
 }
 
 thead th:last-child {
@@ -3545,6 +3610,10 @@ tbody td:nth-child(2) {
   font-weight: bold;
 }
 
+tbody td:nth-child(4) {
+  max-width: 250px;
+}
+
 tbody .btn-fix {
   border-radius: 8px;
   padding: 6px 12px;
@@ -3552,6 +3621,19 @@ tbody .btn-fix {
   height: 32px;
   background: var(--yellow);
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+tbody .btn-fix span {
+  display: flex;
+  align-items: center;
+}
+
+.spec__point__tab {
+  color: var(--yellow);
 }
 
 /* Responsive styles */
@@ -3784,7 +3866,9 @@ tbody .btn-fix {
     margin: 0px;
   }
   p,
-  .card__item__icons p {
+  .card__item__icons p,
+  .page__holder__acc__settings p,
+  .page__holder__acc__settings button {
     font-size: 14px;
     margin: 0px;
   }
@@ -3944,7 +4028,8 @@ tbody .btn-fix {
   .popup-content h2,
   .breadcrumbs,
   .radio-group label,
-  .step-block h3 {
+  .step-block h3,
+  .page__holder__acc__settings h3 {
     font-size: 18px;
   }
 
@@ -4035,8 +4120,9 @@ tbody .btn-fix {
 
   .integration__content h2,
   .temp__footer h3,
-  .plan__top h3 {
-    font-size: 15px;
+  .plan__top h3,
+  .acc__set__content .acc__set__title {
+    font-size: 18px;
     padding: 0;
     margin: 10px 0;
   }
@@ -4046,8 +4132,16 @@ tbody .btn-fix {
   }
 
   .integration__content h1,
-  .temp__footer p {
+  .temp__footer p,
+  .plan__top,
+  .plan__details,
+  .usage__details {
     margin: 0;
+  }
+
+  .plan__usage {
+    padding: 10px;
+    height: auto;
   }
 
   .templates__holder {

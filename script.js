@@ -423,10 +423,7 @@ function sortTable(columnIndex) {
   const th = table.querySelectorAll('th')[columnIndex];
   const isAscending = th.classList.toggle('asc');
 
-  const parseDate = (cellText) => {
-    const [datePart, timePart] = cellText.split('\n').map((s) => s.trim());
-    return new Date(`${datePart} ${timePart}`);
-  };
+  const parseDate = (cellText) => new Date(cellText.trim());
 
   rows.sort((rowA, rowB) => {
     const cellA = rowA.cells[columnIndex].innerText;

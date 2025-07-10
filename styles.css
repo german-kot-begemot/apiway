@@ -1431,13 +1431,18 @@ legend {
 
 .sts__btns button:hover,
 .point__holder button:hover,
-.page__holder__trigger button:hover,
 .temp__footer__app__connected button:hover,
 .linkApp__btns button:hover,
 .det__btns__holder button:hover,
 .linkApp__add__btn:hover,
-.page__holder__acc__settings button:hover {
+.page__holder__acc__settings button:hover,
+.page__holder__trigger button:hover,
+.page__holder__err__report button:hover {
   box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.page__holder__trigger button:hover {
   cursor: pointer;
 }
 
@@ -1513,6 +1518,11 @@ legend {
 
 .video__btn:hover {
   color: var(--dark-grey);
+  transform: translateY(-2px);
+}
+
+.trigger__tutorial-link:hover,
+.trigger__update-fields:hover {
   transform: translateY(-2px);
 }
 
@@ -2484,7 +2494,8 @@ span.ig-comment__time {
 }
 
 .page__holder__create .pop__card__holder {
-  overflow: overlay;
+  /* overflow: overlay; */
+  overflow: scroll;
   gap: 4%;
   height: auto;
   display: flex;
@@ -2602,7 +2613,6 @@ span.ig-comment__time {
 
 .trigger__form {
   display: flex;
-  gap: 6.4%;
   flex: 1;
   width: 100%;
 }
@@ -2631,6 +2641,7 @@ span.ig-comment__time {
 
 .trigger__step__1 {
   justify-content: start;
+  margin-right: 6.4%;
 }
 
 .trigger__title {
@@ -2893,6 +2904,12 @@ span.ig-comment__time {
   margin: 24px 0;
 }
 
+.trigger__arrow {
+  position: absolute;
+  left: 50%;
+  top: 145px;
+}
+
 /* App connected*/
 
 .account__settings__bar {
@@ -3122,6 +3139,10 @@ span.ig-comment__time {
 .linkApp__card .linkApp__relink__btn {
   background: #fff;
   border: 1px solid var(--light-grey);
+}
+
+.page__holder__linkApp .search__input {
+  margin: 0;
 }
 
 .card__holder__mini {

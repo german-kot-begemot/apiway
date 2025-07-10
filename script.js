@@ -350,4 +350,62 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', checkWidth);
     checkWidth();
   });
+
+  /** =========================== TOGGLE ПАРОЛЯ ============================ */
+  document.querySelectorAll('.toggle__password').forEach((button) => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+      if (input) {
+        input.type = input.type === 'password' ? 'text' : 'password';
+      }
+    });
+  });
+
+  /** =========================== ВАЛИДАЦИЯ ПАРОЛЯ ============================ */
+  const newPasswordInput = document.getElementById('new-password');
+  const rules = document.querySelectorAll(
+    '#password__requirements .password__rule'
+  );
+
+  const checkIcon = `
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M13.9007 5.01616L6.83231 11.9039C6.76971 11.9654 6.68449 12 6.59559 12C6.50669 12 6.42147 11.9654 6.35886 11.9039L2.76464 8.40155C2.70152 8.34054 2.66602 8.2575 2.66602 8.17087C2.66602 8.08425 2.70152 8.0012 2.76464 7.9402L3.23142 7.48535C3.29403 7.42384 3.37925 7.38925 3.46815 7.38925C3.55705 7.38925 3.64227 7.42384 3.70487 7.48535L6.59225 10.2989L12.9605 4.09346C13.0924 3.96885 13.302 3.96885 13.4339 4.09346L13.9007 4.55481C13.9638 4.61582 13.9993 4.69886 13.9993 4.78549C13.9993 4.87211 13.9638 4.95516 13.9007 5.01616Z" fill="#4BC160" />
+</svg>`;
+
+  const crossIcon = `
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M11.8986 10.9586C11.9617 11.0212 11.9972 11.1064 11.9972 11.1953C11.9972 11.2841 11.9617 11.3693 11.8986 11.4319L11.4319 11.8986C11.3693 11.9617 11.2841 11.9972 11.1953 11.9972C11.1064 11.9972 11.0212 11.9617 10.9586 11.8986L7.9986 8.9386L5.0386 11.8986C4.97601 11.9617 4.89081 11.9972 4.80193 11.9972C4.71305 11.9972 4.62785 11.9617 4.56527 11.8986L4.0986 11.4319C4.0355 11.3693 4 11.2841 4 11.1953C4 11.1064 4.0355 11.0212 4.0986 10.9586L7.0586 7.9986L4.0986 5.0386C4.0355 4.97601 4 4.89081 4 4.80193C4 4.71305 4.0355 4.62785 4.0986 4.56527L4.56527 4.0986C4.62785 4.0355 4.71305 4 4.80193 4C4.89081 4 4.97601 4.0355 5.0386 4.0986L7.9986 7.0586L10.9586 4.0986C11.0212 4.0355 11.1064 4 11.1953 4C11.2841 4 11.3693 4.0355 11.4319 4.0986L11.8986 4.56527C11.9617 4.62785 11.9972 4.71305 11.9972 4.80193C11.9972 4.89081 11.9617 4.97601 11.8986 5.0386L8.9386 7.9986L11.8986 10.9586Z" fill="#F85243" />
+</svg>`;
+
+  rules.forEach((rule) => {
+    const iconSpan = rule.querySelector('.icon');
+    iconSpan.innerHTML = crossIcon;
+    rule.classList.add('invalid');
+  });
+
+  newPasswordInput.addEventListener('input', () => {
+    const value = newPasswordInput.value;
+
+    const conditions = [
+      /.{8,}/.test(value), // Minimum 8 characters
+      /[A-Z]/.test(value), // One uppercase
+      /[a-z]/.test(value), // One lowercase
+      /[0-9]/.test(value), // One number
+      /[^A-Za-z0-9]/.test(value), // One special character
+    ];
+
+    rules.forEach((rule, index) => {
+      const iconSpan = rule.querySelector('.icon');
+      if (conditions[index]) {
+        rule.classList.add('valid');
+        rule.classList.remove('invalid');
+        iconSpan.innerHTML = checkIcon;
+      } else {
+        rule.classList.add('invalid');
+        rule.classList.remove('valid');
+        iconSpan.innerHTML = crossIcon;
+      }
+    });
+  });
 });

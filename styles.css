@@ -1434,7 +1434,8 @@ legend {
 .temp__footer__app__connected button:hover,
 .linkApp__btns button:hover,
 .det__btns__holder button:hover,
-.linkApp__add__btn:hover {
+.linkApp__add__btn:hover,
+.page__holder__acc__settings button:hover {
   box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
   cursor: pointer;
 }
@@ -3267,6 +3268,19 @@ span.ig-comment__time {
   display: flex;
   align-items: center;
   gap: 32px;
+  border-bottom: 2px solid var(--light-grey);
+  padding-bottom: 8px;
+}
+
+.acc__set__subtitle .tab {
+  padding: 0;
+  background: transparent;
+}
+
+.acc__set__subtitle .tab:hover {
+  box-shadow: none;
+  border-bottom: 2px solid var(--yellow);
+  border-radius: 0;
 }
 
 .acc__set__content label {
@@ -3303,8 +3317,15 @@ span.ig-comment__time {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--yellow);
+  background: var(--light-grey);
+  color: var(--dark-grey);
   padding: 8px 16px;
+}
+
+.plan__top button,
+.data__block .save__pass__btn {
+  background: var(--yellow);
+  color: var(--main-black);
 }
 
 .plan__top {
@@ -3326,6 +3347,127 @@ span.ig-comment__time {
   font-size: 40px;
   line-height: 130%;
   letter-spacing: -0.03em;
+}
+
+.plan__usage {
+  background: #f7f8f9;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.usage__top,
+.usage__details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input__wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+button.toggle__password {
+  position: absolute;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  top: 5px;
+  position: absolute;
+}
+
+#password__requirements {
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+#password__requirements .password__rule {
+  color: var(--dark-grey);
+}
+
+#password__requirements .valid {
+  color: var(--green);
+}
+
+#password__requirements .invalid {
+  color: #f85243;
+}
+
+.error__text {
+  color: #f85243;
+}
+
+.password__rule span {
+  margin-right: 8px;
+}
+
+.password__rule {
+  margin-bottom: 8px;
+}
+
+.social__logins {
+  color: var(--dark-grey);
+}
+
+.social-login-option {
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+}
+
+.social-login-option span {
+  margin: 0 24px 0 16px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+}
+
+.social__logins__block p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.03em;
+  color: var(--dark-grey);
+}
+
+.logout__block h3 {
+  margin-bottom: 24px;
+}
+
+.danger__block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.danger__block button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #f85243;
+  background-color: transparent;
+  padding: 0;
+}
+
+.danger__block button:hover {
+  cursor: pointer;
+  color: var(--dark-grey);
+  box-shadow: none;
 }
 
 /* Responsive styles */
@@ -3808,7 +3950,8 @@ span.ig-comment__time {
   }
 
   .integration__content h2,
-  .temp__footer h3 {
+  .temp__footer h3,
+  .plan__top h3 {
     font-size: 15px;
     padding: 0;
     margin: 10px 0;
@@ -3989,7 +4132,9 @@ span.ig-comment__time {
   }
 
   .linkApp__img__wrapper,
-  .linkApp__btns {
+  .linkApp__btns,
+  .plan__top,
+  .danger__block {
     flex-direction: column;
     align-items: flex-start;
   }

@@ -332,24 +332,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /** =========================== КОЛЛАПС БОКОВОЙ ПАНЕЛИ ============================ */
-  document.addEventListener('DOMContentLoaded', function () {
-    const aside = document.querySelector('.aside');
-    const toggleBtn = document.querySelector('.aside-toggle');
 
-    toggleBtn?.addEventListener('click', () => {
-      aside.classList.toggle('aside--collapsed');
+  const colAside = document.querySelector('.aside');
+  const toggleBtn = document.querySelector('.aside-toggle');
+
+  if (colAside && toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      colAside.classList.toggle('aside--collapsed');
     });
+
     function checkWidth() {
       if (window.innerWidth <= 426) {
-        aside.classList.add('aside--collapsed');
+        colAside.classList.add('aside--collapsed');
       } else {
-        aside.classList.remove('aside--collapsed');
+        colAside.classList.remove('aside--collapsed');
       }
     }
 
     window.addEventListener('resize', checkWidth);
     checkWidth();
-  });
+  }
 
   /** =========================== TOGGLE ПАРОЛЯ ============================ */
   document.querySelectorAll('.toggle__password').forEach((button) => {
@@ -378,34 +380,63 @@ document.addEventListener('DOMContentLoaded', () => {
   <path d="M11.8986 10.9586C11.9617 11.0212 11.9972 11.1064 11.9972 11.1953C11.9972 11.2841 11.9617 11.3693 11.8986 11.4319L11.4319 11.8986C11.3693 11.9617 11.2841 11.9972 11.1953 11.9972C11.1064 11.9972 11.0212 11.9617 10.9586 11.8986L7.9986 8.9386L5.0386 11.8986C4.97601 11.9617 4.89081 11.9972 4.80193 11.9972C4.71305 11.9972 4.62785 11.9617 4.56527 11.8986L4.0986 11.4319C4.0355 11.3693 4 11.2841 4 11.1953C4 11.1064 4.0355 11.0212 4.0986 10.9586L7.0586 7.9986L4.0986 5.0386C4.0355 4.97601 4 4.89081 4 4.80193C4 4.71305 4.0355 4.62785 4.0986 4.56527L4.56527 4.0986C4.62785 4.0355 4.71305 4 4.80193 4C4.89081 4 4.97601 4.0355 5.0386 4.0986L7.9986 7.0586L10.9586 4.0986C11.0212 4.0355 11.1064 4 11.1953 4C11.2841 4 11.3693 4.0355 11.4319 4.0986L11.8986 4.56527C11.9617 4.62785 11.9972 4.71305 11.9972 4.80193C11.9972 4.89081 11.9617 4.97601 11.8986 5.0386L8.9386 7.9986L11.8986 10.9586Z" fill="#F85243" />
 </svg>`;
 
-  rules.forEach((rule) => {
-    const iconSpan = rule.querySelector('.icon');
-    iconSpan.innerHTML = crossIcon;
-    rule.classList.add('invalid');
-  });
-
-  newPasswordInput.addEventListener('input', () => {
-    const value = newPasswordInput.value;
-
-    const conditions = [
-      /.{8,}/.test(value), // Minimum 8 characters
-      /[A-Z]/.test(value), // One uppercase
-      /[a-z]/.test(value), // One lowercase
-      /[0-9]/.test(value), // One number
-      /[^A-Za-z0-9]/.test(value), // One special character
-    ];
-
-    rules.forEach((rule, index) => {
+  if (newPasswordInput) {
+    rules.forEach((rule) => {
       const iconSpan = rule.querySelector('.icon');
-      if (conditions[index]) {
-        rule.classList.add('valid');
-        rule.classList.remove('invalid');
-        iconSpan.innerHTML = checkIcon;
-      } else {
-        rule.classList.add('invalid');
-        rule.classList.remove('valid');
-        iconSpan.innerHTML = crossIcon;
-      }
+      iconSpan.innerHTML = crossIcon;
+      rule.classList.add('invalid');
     });
-  });
+
+    newPasswordInput.addEventListener('input', () => {
+      const value = newPasswordInput.value;
+
+      const conditions = [
+        /.{8,}/.test(value), // Minimum 8 characters
+        /[A-Z]/.test(value), // One uppercase
+        /[a-z]/.test(value), // One lowercase
+        /[0-9]/.test(value), // One number
+        /[^A-Za-z0-9]/.test(value), // One special character
+      ];
+
+      rules.forEach((rule, index) => {
+        const iconSpan = rule.querySelector('.icon');
+        if (!iconSpan) return;
+        if (conditions[index]) {
+          rule.classList.add('valid');
+          rule.classList.remove('invalid');
+          iconSpan.innerHTML = checkIcon;
+        } else {
+          rule.classList.add('invalid');
+          rule.classList.remove('valid');
+          iconSpan.innerHTML = crossIcon;
+        }
+      });
+    });
+  }
 });
+
+/** =========================== СОРТИРОВКА ТАБЛИЦЫ по дате  ============================ */
+function sortTable(columnIndex) {
+  const table = document.getElementById('sortableTable');
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.rows);
+  const th = table.querySelectorAll('th')[columnIndex];
+  const isAscending = th.classList.toggle('asc');
+
+  const parseDate = (cellText) => {
+    const [datePart, timePart] = cellText.split('\n').map((s) => s.trim());
+    return new Date(`${datePart} ${timePart}`);
+  };
+
+  rows.sort((rowA, rowB) => {
+    const cellA = rowA.cells[columnIndex].innerText;
+    const cellB = rowB.cells[columnIndex].innerText;
+
+    const dateA = parseDate(cellA);
+    const dateB = parseDate(cellB);
+
+    return isAscending ? dateA - dateB : dateB - dateA;
+  });
+
+  rows.forEach((row) => tbody.appendChild(row));
+}

@@ -2,17 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
   /** =========================== БОКОВАЯ ПАНЕЛЬ ============================ */
   const aside = document.querySelector('.aside');
 
+  if (!aside) return;
+
   function checkWidth() {
-    if (!aside) return;
-    if (window.innerWidth <= 426) {
-      aside.classList.add('collapsed');
+    const isForced = aside.hasAttribute('data-force-collapsed');
+
+    if (window.innerWidth <= 768 || isForced) {
+      aside.classList.add('aside--collapsed');
     } else {
-      aside.classList.remove('collapsed');
+      aside.classList.remove('aside--collapsed');
     }
   }
 
-  window.addEventListener('resize', checkWidth);
   checkWidth();
+  window.addEventListener('resize', checkWidth);
 
   /** =========================== МЕНЮ С ПОИСКОМ ============================ */
   document.querySelectorAll('.menu_with_search a').forEach((item) => {
@@ -331,28 +334,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .forEach((s) => s.classList.remove('open'));
   });
 
-  /** =========================== КОЛЛАПС БОКОВОЙ ПАНЕЛИ ============================ */
-
-  const colAside = document.querySelector('.aside');
-  const toggleBtn = document.querySelector('.aside-toggle');
-
-  if (colAside && toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      colAside.classList.toggle('aside--collapsed');
-    });
-
-    function checkWidth() {
-      if (window.innerWidth <= 426) {
-        colAside.classList.add('aside--collapsed');
-      } else {
-        colAside.classList.remove('aside--collapsed');
-      }
-    }
-
-    window.addEventListener('resize', checkWidth);
-    checkWidth();
-  }
-
   /** =========================== TOGGLE ПАРОЛЯ ============================ */
   document.querySelectorAll('.toggle__password').forEach((button) => {
     button.addEventListener('click', () => {
@@ -391,11 +372,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const value = newPasswordInput.value;
 
       const conditions = [
-        /.{8,}/.test(value), // Minimum 8 characters
-        /[A-Z]/.test(value), // One uppercase
-        /[a-z]/.test(value), // One lowercase
-        /[0-9]/.test(value), // One number
-        /[^A-Za-z0-9]/.test(value), // One special character
+        /.{8,}/.test(value), // min 8 characters
+        /[A-Z]/.test(value), // uppercase
+        /[a-z]/.test(value), // lowercase
+        /[0-9]/.test(value), // number
+        /[^A-Za-z0-9]/.test(value), // one special character
       ];
 
       rules.forEach((rule, index) => {

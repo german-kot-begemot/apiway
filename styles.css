@@ -141,6 +141,7 @@ html {
   border: 0;
   font-size: 100%;
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
   vertical-align: baseline;
   -webkit-text-size-adjust: 100%;
@@ -155,7 +156,7 @@ body {
   flex-direction: column;
   font-family: var(--font-family);
   place-items: center;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
   padding: 0;
   border: 0;
@@ -268,9 +269,6 @@ button:hover {
   transition: color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card {
-}
-
 /* /////////////////////////////////////////////////////// */
 /* General styles for the Dashbord page */
 
@@ -285,50 +283,55 @@ button:hover {
   -ms-flex-pack: start;
   justify-content: flex-start;
   width: 100%;
-  height: 100vh;
+  height: auto;
+  height: 100%;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.aside__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border-top: 1px solid var(--light-grey);
+  padding: 24px 16px;
+}
+
+.aside__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aside__bottom {
+  display: flex;
+  flex-direction: column;
 }
 
 .aside__header {
   display: flex;
   border-bottom: 1px solid var(--light-grey);
-  padding: 0 16px 20px;
+  padding: 20px 16px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  font-family: var(--font-family);
   font-weight: 700;
   font-size: 30px;
   letter-spacing: -0.03em;
-  margin-top: 20px;
 }
 
 .logo span {
   margin-left: 10px;
 }
 
-.aside {
-  flex: 0 0 222px;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 222px;
-  transition: flex-basis 0.3s ease, padding 0.3s ease;
-  overflow: hidden;
-  height: 100%;
-  min-height: 100vh;
-}
-
-.aside__body {
-  display: flex;
-  flex-direction: column;
-  padding-top: 24px;
-  align-items: center;
-  gap: 16px;
-  height: 100%;
-}
-
-.create_btn {
+.aside .create_btn {
   border: 2px solid var(--main-black);
   border-radius: 14px;
   width: 190px;
@@ -340,6 +343,7 @@ button:hover {
   gap: 8px;
   color: var(--main-black);
   transition: border 0.3s, color 0.3s;
+  margin-bottom: 15px;
 }
 
 .create_btn:hover,
@@ -365,6 +369,13 @@ button:hover {
   font-weight: 400;
 }
 
+.aside .automations__img {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: -10px;
+}
+
 .aside_transform__text {
   font-weight: 700;
   font-size: 18px;
@@ -372,46 +383,33 @@ button:hover {
   letter-spacing: -0.03px;
 }
 
-.aside__footer_dashboard {
-  margin-top: auto;
-  padding: 16px 16px 32px;
-}
-
-.aside__footer_dashboard,
 .footer_links {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  align-items: center;
-}
-
-.footer_links {
+  gap: 32px;
   align-items: start;
   width: 100%;
+  margin-bottom: 17px;
+  margin-left: 12px;
 }
 
-.footer_link_text {
-  font-weight: 400;
-}
-
-.personal_menu {
-  padding-left: 12px;
-  padding-top: 1px;
-}
-
-.personal_menu li a {
+.footer_link {
   display: flex;
-  gap: 10px;
-  width: 100%;
+  align-items: center;
+  gap: 8px;
 }
 
-.personal_menu li img {
-  padding-left: 12px;
+.footer_link span {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: -0.03em;
 }
 
 .upgrade_plan {
   border-radius: 12px;
-  margin-bottom: 8px;
+  margin-top: 22px;
+  margin-bottom: 26px;
   width: 190px;
   height: 40px;
   background: var(--main-black);
@@ -423,26 +421,12 @@ button:hover {
   color: #fffefe;
 }
 
-.footer_links a {
-  margin-left: 12px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8.5px;
-  margin-bottom: 0;
-  width: 100%;
-}
-
-.footer_links a:first-child {
-  margin-bottom: 16px;
-}
-
-#data-progress {
-  border-radius: 10px;
-}
-
-.data-transfer__label_dashboard {
+.label_dashboard {
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
+  line-height: 167%;
+  letter-spacing: -0.03em;
 }
 
 .templates__holder {
@@ -518,9 +502,8 @@ button:hover {
   flex-direction: column;
   width: 100%;
   background: var(--background);
-  min-height: 100vh;
   padding: 32px;
-  overflow: scroll;
+  height: 100%;
 }
 
 .integration__content h1 {
@@ -539,8 +522,8 @@ button:hover {
   width: 190px;
   height: 4px;
   background: rgba(254, 189, 50, 0.2);
-  margin: 4px 0 22px 0;
   border-radius: 10px;
+  margin-top: 4px;
 }
 
 .data-transfer {
@@ -632,9 +615,34 @@ button:hover {
   height: auto;
 }
 
-.aside.collapsed {
-  flex: 0 0 86px;
-  padding: 15px 5px;
+.aside--collapsed {
+  width: 80px;
+}
+
+.aside--collapsed .mob__hidden {
+  display: none !important;
+}
+
+.aside--collapsed .create_btn {
+  width: 50px;
+}
+
+.aside--collapsed .aside__header {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aside--collapsed .aside .automations__img {
+  margin: 0;
+}
+
+.aside--collapsed .footer_links {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* General styles for the Automations page */
@@ -2773,36 +2781,6 @@ span.ig-comment__time {
   padding: 24px;
 }
 
-.aside--collapsed {
-  max-width: 80px;
-}
-
-.aside--collapsed .mob__hidden,
-.aside--collapsed .aside_transform__text {
-  display: none;
-}
-
-.aside--collapsed form {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  width: 48px;
-  height: 40px;
-}
-
-.aside--collapsed .aside_nav {
-  width: 44px;
-  height: 39px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.aside--collapsed .personal_menu {
-  padding: 0;
-}
-
 .tr__header__wrapper {
   display: flex;
   align-items: center;
@@ -3810,18 +3788,6 @@ tbody .btn-fix span {
     margin: 0px;
   }
 
-  .aside {
-    flex: 0 0 86px;
-    transition: flex-basis 0.3s ease, padding 0.3s ease;
-    position: relative;
-    padding: 0;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    padding: 0;
-  }
-
   .akk {
     padding: 10px 0;
   }
@@ -3830,64 +3796,9 @@ tbody .btn-fix span {
     width: 100%;
   }
 
-  .footer_links a {
-    justify-content: center;
-  }
-
-  .aside__body {
-    padding: 0;
-    margin: 10px;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-
-  .aside__header,
-  .personal_menu {
-    padding: 0;
-  }
-
-  .aside_transform__text {
-    opacity: 0;
-    width: 0;
-    pointer-events: none;
-    overflow: hidden;
-    transition: opacity 0.3s ease;
-  }
-
-  .aside--collapsed form {
-    justify-content: center;
-  }
-
-  .aside.collapsed {
-    padding: 0;
-  }
-
-  .aside_nav {
-    width: -webkit-fill-available;
-  }
-
-  .mob__hidden {
-    display: none;
-  }
-
   .mob__changed {
     width: 24px;
     height: 24px;
-  }
-
-  .footer_links {
-    min-width: 46px;
-  }
-
-  .footer_links a,
-  .aside__footer_dashboard {
-    margin: 0;
-    width: 46px;
-    padding: 0;
-  }
-
-  .footer_links a:first-child {
-    margin-bottom: 0;
   }
 
   .toggle-switch-handle {
@@ -3899,23 +3810,6 @@ tbody .btn-fix span {
   .toggle-switch-background,
   .toggle-switch {
     height: 24px;
-  }
-
-  .page__holder__automations .aside {
-    padding: 0;
-  }
-
-  .footer_link {
-    max-width: 46px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-  .footer_link svg,
-  .automations__img svg {
-    width: 46px;
-    height: 46px;
   }
 
   .search__input,

@@ -133,9 +133,7 @@
 *::after {
   box-sizing: border-box;
 }
-/* * {
-  outline: 1px solid red;
-} */
+
 html {
   font-size: 100%;
   margin: 0 auto;
@@ -163,6 +161,7 @@ body {
   border: 0;
   color: var(--main-black);
 }
+
 a,
 h1,
 h2,
@@ -180,6 +179,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -255,6 +255,23 @@ legend {
   margin-left: -7px;
 }
 
+a:hover {
+  color: var(--dark-grey) !important;
+  filter: none !important;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card {
+}
+
+/* /////////////////////////////////////////////////////// */
 /* General styles for the Dashbord page */
 
 .page__holder {
@@ -325,11 +342,6 @@ legend {
   transition: border 0.3s, color 0.3s;
 }
 
-.create_btn .mysvg path,
-.search_btn .mysvg path {
-  transition: fill 0.3s;
-}
-
 .create_btn:hover,
 .search_btn:hover {
   border-color: var(--dark-grey);
@@ -337,8 +349,13 @@ legend {
 }
 
 .create_btn:hover .mysvg path,
-.search_btn:hover .mysvg path {
+.search_btn:hover .mysvg path,
+.footer_link:hover .mysvg path.svg-arrow,
+.video__btn:hover svg path,
+.upd__btn:hover svg path,
+.connect-btn:hover .plus svg path {
   fill: var(--dark-grey);
+  transition: fill 0.3s ease;
 }
 
 .create_btn span {
@@ -533,14 +550,6 @@ legend {
   color: var(--main-black);
   margin-bottom: -16px;
 }
-.create_btn:hover,
-.upgrade_plan:hover,
-.footer_links a:hover,
-.aside_nav a:hover,
-.logo:hover,
-.search_btn:hover {
-  cursor: pointer;
-}
 
 .temp__card:hover,
 .tag:hover {
@@ -552,46 +561,14 @@ legend {
   transform: translateY(-4px);
 }
 
-.upgrade_plan:hover,
-.create_btn:hover,
-.search_btn:hover,
-.go__btn:hover {
-  box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.page__holder__status button {
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.create_btn:hover,
-.search_btn:hover {
-  box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
-  border-color: var(--dark-grey);
-  color: var(--dark-grey);
-}
-
 .aside_nav {
   width: 190px;
   margin-top: 16px;
 }
 
-.footer_links a:hover,
-.aside_nav a:hover {
-  color: var(--dark-grey) !important;
-  filter: none !important;
-  transition: color 0.3s ease;
-}
-
 .footer_link:hover .mysvg path,
 .automations__img:hover .mysvg path {
   stroke: var(--dark-grey);
-}
-
-.footer_link:hover .mysvg path.svg-arrow {
-  fill: var(--dark-grey);
 }
 
 .tooltip-container {
@@ -710,12 +687,6 @@ legend {
   font-weight: 400;
 }
 
-.menu_with_search a:hover,
-.account__settings__title:hover {
-  color: var(--dark-grey);
-  cursor: pointer;
-}
-
 .menu_with_search a.it__selected {
   font-weight: 700;
   color: #242424;
@@ -756,14 +727,10 @@ legend {
   stroke: none !important;
 }
 
-.menu__item:hover,
-.nav__svg:hover .mysvg path {
-  stroke: var(--dark-grey);
-  fill: var(--dark-grey);
-}
-
 .menu__item:hover svg path,
-.menu_with_search a:hover:not(.it__selected) svg path {
+.menu_with_search a:hover:not(.it__selected) svg path,
+.menu_with_search a:hover svg path:not(.it__selected path),
+.nav__svg:hover .mysvg path {
   fill: var(--dark-grey);
   stroke: var(--dark-grey);
 }
@@ -772,11 +739,6 @@ legend {
   transition: fill 0.3s ease, stroke 0.3s ease;
   fill: #242424;
   stroke: none;
-}
-
-.menu_with_search a:hover svg path:not(.it__selected path) {
-  fill: var(--dark-grey);
-  stroke: var(--dark-grey);
 }
 
 .menu_with_search svg {
@@ -1142,6 +1104,7 @@ legend {
     transform: translate(-50%, -50%) rotate(45deg);
     transition: ease-out 0.3s all;
   }
+
   &:hover,
   &:focus {
     &:before {
@@ -1359,11 +1322,6 @@ legend {
   margin: 21% 0 6%;
 }
 
-.go__btn,
-.page__holder__status button {
-  transition: color 0.3s ease, box-shadow 0.3s ease;
-}
-
 /* Connect page styles */
 
 .page__holder__status,
@@ -1427,23 +1385,6 @@ legend {
 
 .back__dash__btn {
   background: var(--grey);
-}
-
-.sts__btns button:hover,
-.point__holder button:hover,
-.temp__footer__app__connected button:hover,
-.linkApp__btns button:hover,
-.det__btns__holder button:hover,
-.linkApp__add__btn:hover,
-.page__holder__acc__settings button:hover,
-.page__holder__trigger button:hover,
-.page__holder__err__report button:hover {
-  box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
-}
-
-.page__holder__trigger button:hover {
-  cursor: pointer;
 }
 
 .create__auto__btn {
@@ -1516,18 +1457,9 @@ legend {
   letter-spacing: -0.03em;
 }
 
-.video__btn:hover {
-  color: var(--dark-grey);
+.video__btn:hover,
+.upd__btn:hover {
   transform: translateY(-2px);
-}
-
-.trigger__tutorial-link:hover,
-.trigger__update-fields:hover {
-  transform: translateY(-2px);
-}
-
-.video__btn:hover svg path {
-  fill: var(--dark-grey);
 }
 
 .page__holder__templates .pop__card {
@@ -1692,22 +1624,13 @@ legend {
 }
 
 .connect-btn {
-  border: none;
-  font-family: var(--font-family);
   font-weight: 500;
   font-size: 18px;
   letter-spacing: -0.03em;
   color: #0295f4;
-  background: transparent;
-}
-
-.connect-btn:hover {
-  color: var(--dark-grey);
-  cursor: pointer;
-}
-
-.connect-btn:hover .plus svg path {
-  fill: var(--dark-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*Create connections */
@@ -1785,7 +1708,6 @@ legend {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  /* flex: 1; */
   overflow-y: auto;
   margin: 9px;
   height: 100%;
@@ -2382,7 +2304,7 @@ span.ig-comment__time {
   padding: 4px 18px;
   width: 96px;
   height: 29px;
-  background: #ffd987;
+  background: #ffc107;
   display: flex;
   align-items: center;
   font-weight: 400;
@@ -2394,8 +2316,7 @@ span.ig-comment__time {
 }
 
 .browse-button:hover {
-  background: #ffc107;
-  color: #fff;
+  background: #ffd987;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
@@ -2458,12 +2379,6 @@ span.ig-comment__time {
   gap: 8px;
 }
 
-.breadcrumbs a:hover {
-  box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);
-  cursor: pointer;
-  color: var(--main-black);
-}
-
 .back-link {
   display: flex;
   align-items: center;
@@ -2494,7 +2409,6 @@ span.ig-comment__time {
 }
 
 .page__holder__create .pop__card__holder {
-  /* overflow: overlay; */
   overflow: scroll;
   gap: 4%;
   height: auto;
@@ -2719,6 +2633,10 @@ span.ig-comment__time {
   align-items: center;
   gap: 2%;
   margin-bottom: 16px;
+}
+
+.page__holder__trigger .video__btn span {
+  font-size: 16px;
 }
 
 .switchers-holder {
@@ -2947,7 +2865,6 @@ span.ig-comment__time {
 .app__conn__card {
   border-radius: 24px;
   padding: 24px;
-  /* width: 78%; */
   width: 320px;
   height: auto;
   box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);

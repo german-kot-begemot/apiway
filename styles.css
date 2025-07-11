@@ -987,6 +987,8 @@ button:hover {
 .dots-menu button:hover {
   color: var(--red);
   border-radius: 5px;
+  border: none;
+  box-shadow: none;
 }
 
 .tag {
@@ -1047,8 +1049,6 @@ button:hover {
 .modal-buttons button {
   flex: 1;
   cursor: pointer;
-  transition: background-color 0.4s ease, color 0.4s ease,
-    border-color 0.4s ease;
   border: 2px solid transparent;
   background-color: white;
   border-radius: 15px;
@@ -1065,7 +1065,6 @@ button:hover {
 .modal-buttons button:hover {
   border-color: var(--main-black);
   background: var(--grey);
-  color: var(--main-black);
 }
 
 .close__btn {

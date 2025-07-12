@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('Script loaded');
+  const akks = document.querySelector('.akk');
+  console.log('akk:', akks);
   /** =========================== БОКОВАЯ ПАНЕЛЬ ============================ */
   const aside = document.querySelector('.aside');
 
@@ -114,45 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
       statusEl.style.color = '#f85243';
       createBtn.classList.add('auto__btn__hidden');
     }
-  }
-
-  /** =========================== ДРОПДАУН АККАУНТОВ ============================ */
-  const akk = document.querySelector('.akk');
-  const dropdown = document.querySelector('.dropdown-list');
-  if (akk && dropdown) {
-    const arrow = akk.querySelector('.dropdown-icon');
-    const avatar = akk.querySelector('img.card_icon');
-    const username = akk.querySelector('.akk__info h3');
-    const userinfo = akk.querySelector('.akk__info p');
-
-    akk.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dropdown.classList.toggle('show');
-      arrow.classList.toggle('rotate');
-    });
-
-    dropdown.querySelectorAll('li').forEach((item) => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const img = item.querySelector('img').src;
-        const name = item.querySelector('h3').textContent;
-        const info = item.querySelector('p').textContent;
-
-        avatar.src = img;
-        username.textContent = name;
-        userinfo.textContent = info;
-
-        dropdown.classList.remove('show');
-        arrow.classList.remove('rotate');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!akk.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.classList.remove('show');
-        arrow.classList.remove('rotate');
-      }
-    });
   }
 
   /** =========================== ПРЕДПРОСМОТР ИЗОБРАЖЕНИЯ ============================ */
@@ -418,3 +382,51 @@ function sortTable(columnIndex) {
 
   rows.forEach((row) => tbody.appendChild(row));
 }
+
+/** =========================== ДРОПДАУН АККАУНТОВ ============================ */
+function setupAccountDropdown(containerSelector, dropdownSelector) {
+  const akk = document.querySelector(containerSelector);
+  const dropdown = document.querySelector(dropdownSelector);
+
+  if (!akk || !dropdown) {
+    console.warn('Account container или dropdown не найдены!');
+    return;
+  }
+
+  const arrow = akk.querySelector('.dropdown-icon');
+  const avatar = akk.querySelector('img.card_icon');
+  const username = akk.querySelector('.akk__info h3');
+  const userinfo = akk.querySelector('.akk__info p');
+
+  akk.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('show');
+    arrow.classList.toggle('rotate');
+  });
+
+  dropdown.querySelectorAll('li').forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+
+      const img = item.querySelector('img').src;
+      const name = item.querySelector('h3').textContent;
+      const info = item.querySelector('p').textContent;
+
+      avatar.src = img;
+      username.textContent = name;
+      userinfo.textContent = info;
+
+      dropdown.classList.remove('show');
+      arrow.classList.remove('rotate');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!akk.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('show');
+      arrow.classList.remove('rotate');
+    }
+  });
+}
+
+setupAccountDropdown('.akk', '.dropdown-list');

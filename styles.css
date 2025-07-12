@@ -3956,7 +3956,7 @@ tbody .btn-fix span {
     margin: 0;
   }
 
-  .connect__aside__img img {
+  .page__holder__connect .connect__aside__img img {
     width: 50%;
   }
 
@@ -4202,17 +4202,29 @@ tbody .btn-fix span {
     margin: 10px 0;
   }
 
+  .page__holder__err__report,
+  .err__report__content,
   .page__holder__app__connected,
   .app__con__content {
     height: auto;
   }
 
-  .page__holder__err__report,
-  .err__report__content {
-    height: auto;
+  .app__con__content {
+    padding: 10px 10px 40px;
   }
 
   .app__con__content .account__settings__bar {
     align-items: center;
+  }
+
+  .page__holder__err__report td,
+  thead th,
+  thead th:first-child {
+    padding: 0 5px;
+    font-size: 14px;
+  }
+
+  .page__holder__err__report tbody td:first-child {
+    padding: 0 0 0 5px;
   }
 }

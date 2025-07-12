@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Script loaded');
-  const akks = document.querySelector('.akk');
-  console.log('akk:', akks);
   /** =========================== БОКОВАЯ ПАНЕЛЬ ============================ */
   const aside = document.querySelector('.aside');
 
@@ -104,20 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /** =========================== СТАТУС INSTAGRAM ============================ */
-  const connected = true; // или false для теста
-  const statusEl = document.getElementById('status');
-  const createBtn = document.getElementById('createBtnAuto');
-  if (statusEl && createBtn) {
-    if (connected) {
-      statusEl.textContent = 'Instagram already connected!';
-      statusEl.style.color = '#5cc67a';
-      createBtn.classList.remove('auto__btn__hidden');
-    } else {
-      statusEl.textContent = 'Instagram is not connected :(';
-      statusEl.style.color = '#f85243';
-      createBtn.classList.add('auto__btn__hidden');
-    }
-  }
+  // const connected = true; // или false для теста
+  // const statusEl = document.getElementById('status');
+  // const createBtn = document.getElementById('createBtnAuto');
+  // if (statusEl && createBtn) {
+  //   if (connected) {
+  //     statusEl.textContent = 'Instagram already connected!';
+  //     statusEl.style.color = '#5cc67a';
+  //     createBtn.classList.remove('auto__btn__hidden');
+  //   } else {
+  //     statusEl.textContent = 'Instagram is not connected :(';
+  //     statusEl.style.color = '#f85243';
+  //     createBtn.classList.add('auto__btn__hidden');
+  //   }
+  // }
 
   /** =========================== ПРЕДПРОСМОТР ИЗОБРАЖЕНИЯ ============================ */
   // const fileInput = document.getElementById('fileInput');
@@ -389,7 +386,7 @@ function setupAccountDropdown(containerSelector, dropdownSelector) {
   const dropdown = document.querySelector(dropdownSelector);
 
   if (!akk || !dropdown) {
-    console.warn('Account container или dropdown не найдены!');
+    // console.warn('Account container или dropdown не найдены!');
     return;
   }
 
@@ -561,3 +558,24 @@ function initFilePreview() {
 }
 
 initFilePreview();
+
+/** =========================== СТАТУС INSTAGRAM ============================ */
+function updateInstagramStatus(connected) {
+  const statusEl = document.getElementById('status');
+  const createBtn = document.getElementById('createBtnAuto');
+
+  if (!statusEl || !createBtn) return;
+
+  if (connected) {
+    statusEl.textContent = 'Instagram already connected!';
+    statusEl.style.color = '#5cc67a';
+    createBtn.classList.remove('auto__btn__hidden');
+  } else {
+    statusEl.textContent = 'Instagram is not connected :(';
+    statusEl.style.color = '#f85243';
+    createBtn.classList.add('auto__btn__hidden');
+  }
+}
+
+const connected = true; // или false
+updateInstagramStatus(connected);

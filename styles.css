@@ -4059,6 +4059,12 @@ tbody .btn-fix span {
 
   .tag {
     height: 24px;
+    margin: 0;
+    width: 63px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .page__holder__automations .menu_with_search span.mob__hidden,
@@ -4231,5 +4237,9 @@ tbody .btn-fix span {
 
   .page__holder__err__report tbody td:first-child {
     padding: 0 0 0 5px;
+  }
+
+  .page__holder__acc__settings .data__progress__svg {
+    width: 100%;
   }
 }

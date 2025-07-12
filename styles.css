@@ -1131,7 +1131,8 @@ button:hover {
 }
 
 .close__btn:hover,
-.back-button:hover {
+.back-button:hover,
+.remove-preview:hover {
   box-shadow: none;
 }
 

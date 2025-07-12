@@ -1339,8 +1339,7 @@ button:hover {
 
 /* Connect page styles */
 
-.page__holder__status,
-.page__holder__templates {
+.page__holder__status {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -1426,11 +1425,21 @@ button:hover {
 }
 
 /* Templates page styles continued */
-.page__holder__templates .templates__holder {
+
+.page__holder__templates {
+  display: flex;
   flex-direction: column;
-  width: 75%;
-  margin: 0 auto;
+  width: 100%;
+  background: var(--background);
+}
+
+.page__holder__templates .templates__holder {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
+  margin: 24px 0 24px 140px;
+  height: 100%;
+  width: 100%;
 }
 
 .page__holder__templates h1 {
@@ -1627,11 +1636,12 @@ button:hover {
   height: 65px;
 }
 
-.page__holder__templates .templates__holder {
+/* .page__holder__templates .templates__holder {
   padding: 0;
   margin-top: 4%;
-  margin-left: 9.7%;
-}
+  height: 100%;
+  margin-left: 140px;
+} */
 
 .page__holder__templates .card_icon {
   width: 45px;
@@ -3610,6 +3620,10 @@ tbody .btn-fix span {
 }
 
 @media (max-width: 1190px) {
+  .page__holder__err__report,
+  .err__report__content {
+    height: auto;
+  }
   .header__nav__search {
     width: 100%;
   }
@@ -3770,6 +3784,10 @@ tbody .btn-fix span {
 }
 
 @media (max-width: 945px) {
+  .page__holder__err__report,
+  .err__report__content {
+    height: auto;
+  }
   .search__icon {
     top: 20%;
     left: 2%;

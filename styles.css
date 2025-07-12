@@ -3881,7 +3881,7 @@ tbody .btn-fix span {
 
   .popup-content .pop__card {
     width: 40%;
-    height: 100px;
+    height: auto;
     margin: 10px 0;
   }
 
@@ -3904,6 +3904,10 @@ tbody .btn-fix span {
   .step-block h3,
   .page__holder__acc__settings h3 {
     font-size: 18px;
+  }
+
+  .pop__title {
+    padding: 5px;
   }
 
   .pop__title h3 {
@@ -4213,5 +4217,9 @@ tbody .btn-fix span {
   .page__holder__err__report,
   .err__report__content {
     height: auto;
+  }
+
+  .app__con__content .account__settings__bar {
+    align-items: center;
   }
 }

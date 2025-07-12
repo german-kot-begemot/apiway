@@ -4017,6 +4017,7 @@ tbody .btn-fix span {
 
   .integration__content {
     padding: 10px;
+    overflow: auto;
   }
 
   .integration__content h2,
@@ -4242,12 +4243,12 @@ tbody .btn-fix span {
   .page__holder__err__report td,
   thead th,
   thead th:first-child {
-    padding: 0 5px;
+    padding: 5px;
     font-size: 14px;
   }
 
   .page__holder__err__report tbody td:first-child {
-    padding: 0 0 0 5px;
+    padding: 5px 0 0 5px;
   }
 
   .page__holder__acc__settings .data__progress__svg {

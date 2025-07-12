@@ -764,19 +764,29 @@ button:hover {
   cursor: default;
 }
 
-.search_input-holder {
+.page__holder__linkApp .search_input-holder {
   position: relative;
   display: flex;
+  width: 344px;
+}
+
+.page__holder__linkApp .search__icon {
+  width: 12px;
+  fill: var(--dark-grey);
+}
+
+.page__holder__linkApp .search__input::placeholder {
+  fill: var(--dark-grey);
 }
 
 .search__input {
   border: 1px solid #d1d2d8;
   border-radius: 12px;
-  padding: 8px 12px;
+  /* padding: 8px 12px; */
   width: 430px;
   height: 40px;
   position: relative;
-  padding-left: 36px;
+  padding-left: 28px;
   box-sizing: border-box;
   margin: 0px 9px;
 }
@@ -2899,8 +2909,7 @@ span.ig-comment__time {
   gap: 12px;
 }
 
-.temp__footer__app__connected button,
-.linkApp__btns button {
+.temp__footer__app__connected button {
   border-radius: 12px;
   padding: 8px 16px;
   width: 100%;
@@ -2989,7 +2998,8 @@ span.ig-comment__time {
 
 .linkApp__cards {
   flex-direction: column;
-  margin: 24px 0 48px;
+  margin: 24px 0 49px;
+  gap: 16px;
 }
 
 .linkApp__card {
@@ -3053,6 +3063,21 @@ span.ig-comment__time {
 
 .linkApp__btns button {
   width: auto;
+  border-radius: 8px;
+  border: none;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.03em;
+}
+
+.page__holder__linkApp .linkApp__test__btn svg {
+  width: 8px;
 }
 
 .linkApp__card p {
@@ -3066,6 +3091,10 @@ span.ig-comment__time {
 .linkApp__card .linkApp__relink__btn {
   background: #fff;
   border: 1px solid var(--light-grey);
+}
+
+.page__holder__linkApp .linkApp__content {
+  padding: 32px 32px 32px 65px;
 }
 
 .page__holder__linkApp .search__input {

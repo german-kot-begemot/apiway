@@ -284,6 +284,9 @@ button:hover {
   justify-content: flex-start;
   width: 100%;
   height: auto;
+}
+
+.page__holder__dash {
   height: 100%;
 }
 
@@ -646,12 +649,17 @@ button:hover {
 }
 
 /* General styles for the Automations page */
+
+.page__holder__automations {
+  height: 100%;
+}
+
 .automations__content {
   display: flex;
   flex-direction: column;
   width: 100%;
   background: var(--background);
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 33px 24px 87px 31px;
 }
 
@@ -3052,13 +3060,12 @@ span.ig-comment__time {
   box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);
   background: #fff;
   border-radius: 24px;
-
   width: 208px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
   transition: border 0.3s ease, box-shadow 0.3s ease;
   min-height: 152px;
   border: 1px solid transparent;
@@ -3636,8 +3643,9 @@ tbody .btn-fix span {
   .connect__aside {
     justify-content: center;
     align-items: center;
-    padding: 1%;
-    padding-bottom: 0;
+    padding: 20px;
+    width: 100%;
+    min-height: auto;
   }
 
   .connect__aside__img {
@@ -3665,10 +3673,17 @@ tbody .btn-fix span {
     margin-top: 10%;
   }
 
+  .connect__main {
+    flex: none;
+    width: 100%;
+    padding: 20px;
+  }
+
   .connect__main__content {
     justify-content: center;
     align-items: center;
     padding: 0;
+    min-height: auto;
   }
 
   .akk__holder__wrapper {
@@ -3878,6 +3893,12 @@ tbody .btn-fix span {
     width: 50%;
   }
 
+  .page__holder__connect {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
   .page__holder__connect p {
     font-size: 14px;
     text-align: center;
@@ -3899,6 +3920,10 @@ tbody .btn-fix span {
   }
 
   .back-button {
+    margin: 0;
+  }
+
+  .page__holder__connect .connect__aside__img {
     margin: 0;
   }
 

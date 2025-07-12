@@ -659,7 +659,6 @@ button:hover {
   flex-direction: column;
   width: 100%;
   background: var(--background);
-  /* min-height: 100vh; */
   padding: 33px 24px 87px 31px;
 }
 
@@ -1233,16 +1232,16 @@ button:hover {
 /* Responsive styles for the Connect page */
 .page__holder__connect {
   display: flex;
+  height: 100%;
 }
 
 .connect__aside {
-  width: 43%;
   background: var(--background);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 615px;
-  padding: 1.4% 7% 9% 9.7%;
+  height: 100%;
+  width: 42.8%;
+  padding: 40px 0 0 138px;
 }
 
 .connect__aside h1 {
@@ -1291,6 +1290,11 @@ button:hover {
 }
 
 .connect__main {
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100%;
   flex: 1;
 }
 
@@ -1298,8 +1302,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
-  padding-left: 223px;
+  padding: 0;
 }
 
 .connect__main__content h3 {
@@ -1334,7 +1337,7 @@ button:hover {
 }
 
 .connect__aside__img {
-  margin: 21% 0 6%;
+  margin: 80px 0 22px;
 }
 
 /* Connect page styles */
@@ -1635,13 +1638,6 @@ button:hover {
   margin: 11px 9px 10px 0px;
   height: 65px;
 }
-
-/* .page__holder__templates .templates__holder {
-  padding: 0;
-  margin-top: 4%;
-  height: 100%;
-  margin-left: 140px;
-} */
 
 .page__holder__templates .card_icon {
   width: 45px;
@@ -3079,7 +3075,6 @@ span.ig-comment__time {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 100%; */
   transition: border 0.3s ease, box-shadow 0.3s ease;
   min-height: 152px;
   border: 1px solid transparent;
@@ -3666,9 +3661,7 @@ tbody .btn-fix span {
   .connect__aside {
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    width: 100%;
-    min-height: auto;
+    padding: 0;
   }
 
   .connect__aside__img {
@@ -3694,19 +3687,6 @@ tbody .btn-fix span {
   .back-button {
     margin-right: -80%;
     margin-top: 10%;
-  }
-
-  .connect__main {
-    flex: none;
-    width: 100%;
-    padding: 20px;
-  }
-
-  .connect__main__content {
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    min-height: auto;
   }
 
   .akk__holder__wrapper {
@@ -3931,10 +3911,25 @@ tbody .btn-fix span {
     justify-content: center;
   }
 
+  .page__holder__connect .connect__aside,
+  .page__holder__app__connected .connect__main {
+    height: 50%;
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+  }
+
   .page__holder__connect p {
     font-size: 14px;
     text-align: center;
-    margin: 10%;
+  }
+
+  .page__holder__connect .connect__main__content {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    min-height: auto;
+    width: 100%;
   }
 
   .page__holder__connect h2,
@@ -3949,6 +3944,8 @@ tbody .btn-fix span {
 
   .page__holder__connect button {
     font-size: 14px;
+    align-self: center;
+    margin: 20px;
   }
 
   .back-button {
@@ -4057,10 +4054,6 @@ tbody .btn-fix span {
 
   .tag {
     height: 24px;
-  }
-
-  .page__holder__connect img {
-    width: 50%;
   }
 
   .page__holder__automations .menu_with_search span.mob__hidden,

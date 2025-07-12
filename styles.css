@@ -1360,9 +1360,13 @@ button:hover {
 }
 
 .page__holder__templates header {
-  margin: 1.5% 0 0 9.8%;
-  width: 159px;
-  height: 39px;
+  padding: 40px 0 0 140px;
+  /* width: 159px;
+  height: 39px; */
+}
+
+.page__holder__templates .connect__aside__img {
+  margin: 0;
 }
 
 .page__holder__status header {
@@ -1439,13 +1443,14 @@ button:hover {
   flex-direction: column;
   width: 100%;
   background: var(--background);
+  height: 100%;
 }
 
 .page__holder__templates .templates__holder {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 24px 0 24px 140px;
+  padding: 24px 0 24px 140px;
   height: 100%;
   width: 100%;
 }
@@ -1640,7 +1645,7 @@ button:hover {
 .akk__holder {
   position: relative;
   width: 245px;
-  margin: 11px 9px 10px 0px;
+  margin: 25px 9px 21px 0px;
   height: 65px;
 }
 
@@ -3621,7 +3626,8 @@ tbody .btn-fix span {
 
 @media (max-width: 1190px) {
   .page__holder__err__report,
-  .err__report__content {
+  .err__report__content,
+  .page__holder__templates {
     height: auto;
   }
   .header__nav__search {
@@ -3977,6 +3983,7 @@ tbody .btn-fix span {
   .page__holder__templates .templates__holder {
     margin: 0;
     width: 100%;
+    padding: 0;
   }
 
   .connect-btn {
@@ -4245,5 +4252,9 @@ tbody .btn-fix span {
 
   .page__holder__acc__settings .data__progress__svg {
     width: 100%;
+  }
+
+  .page__holder__templates .connect__aside__img {
+    padding: 0;
   }
 }

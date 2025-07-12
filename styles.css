@@ -3766,6 +3766,10 @@ tbody .btn-fix span {
     height: auto;
     gap: 16px;
   }
+
+  .trigger__arrow {
+    display: none;
+  }
 }
 
 @media (max-width: 945px) {

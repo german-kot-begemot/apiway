@@ -2815,6 +2815,10 @@ span.ig-comment__time {
 
 /* App connected*/
 
+.page__holder__app__connected {
+  height: 100%;
+}
+
 .account__settings__bar {
   display: flex;
   align-items: center;
@@ -3452,6 +3456,11 @@ h3.social__logins {
 
 /* Error Report styles */
 
+.page__holder__err__report,
+.err__report__content {
+  height: 100%;
+}
+
 .integration__content h2.err__rep__title {
   font-size: 24px;
   line-height: 150%;
@@ -3897,6 +3906,7 @@ tbody .btn-fix span {
     flex-direction: column;
     align-items: center;
     height: 100%;
+    justify-content: center;
   }
 
   .page__holder__connect p {
@@ -4175,5 +4185,15 @@ tbody .btn-fix span {
 
   .linkApp__cards {
     margin: 10px 0;
+  }
+
+  .page__holder__app__connected,
+  .app__con__content {
+    height: auto;
+  }
+
+  .page__holder__err__report,
+  .err__report__content {
+    height: auto;
   }
 }

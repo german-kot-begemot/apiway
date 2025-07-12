@@ -1130,6 +1130,11 @@ button:hover {
   }
 }
 
+.close__btn:hover,
+.back-button:hover {
+  box-shadow: none;
+}
+
 /* Pop up */
 .popup-overlay {
   position: fixed;

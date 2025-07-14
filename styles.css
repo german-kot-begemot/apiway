@@ -780,10 +780,15 @@ button:hover {
 .page__holder__linkApp .search__icon {
   width: 12px;
   fill: var(--dark-grey);
+  top: 47%;
 }
 
 .page__holder__linkApp .search__input::placeholder {
   fill: var(--dark-grey);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  color: var(--dark-grey);
 }
 
 .search__input {

@@ -2667,8 +2667,7 @@ span.ig-comment__time {
 }
 
 .page__holder__trigger,
-.page__holder__acc__settings,
-.page__holder__err__report {
+.page__holder__acc__settings {
   height: auto;
 }
 
@@ -3687,8 +3686,13 @@ tbody .btn-fix span {
 @media (max-width: 1190px) {
   .page__holder__templates,
   .page__holder__linkApp,
-  .page__holder__trigger {
+  .page__holder__trigger,
+  .page__holder__err__report {
     height: auto;
+  }
+
+  .integration__content {
+    overflow: auto;
   }
 
   .header__nav__search {

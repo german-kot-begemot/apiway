@@ -629,6 +629,7 @@ button:hover {
 
 .aside--collapsed .create_btn {
   width: 50px;
+  margin-bottom: 19px;
 }
 
 .aside--collapsed .aside__header {
@@ -645,9 +646,11 @@ button:hover {
 
 .aside--collapsed .footer_links {
   margin: 0;
+  margin-bottom: 11px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 43px;
 }
 
 /* General styles for the Automations page */
@@ -2696,7 +2699,7 @@ span.ig-comment__time {
 }
 
 .switchers-holder {
-  gap: 16px;
+  gap: 7px;
 }
 
 .save__exit__btn {
@@ -2874,6 +2877,9 @@ span.ig-comment__time {
   height: 40px;
   background: #fff;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .account__settings__title {
@@ -2894,7 +2900,7 @@ span.ig-comment__time {
 
 .app__conn__card {
   border-radius: 24px;
-  padding: 24px;
+  padding: 26px 24px;
   width: 320px;
   height: auto;
   box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);
@@ -2908,7 +2914,7 @@ span.ig-comment__time {
   align-items: start;
   justify-content: space-between;
   flex-direction: column;
-  margin-top: 37px;
+  margin-top: 42px;
 }
 
 .temp__footer__app__connected div {
@@ -2935,6 +2941,7 @@ span.ig-comment__time {
 
 .temp__footer__app__connected .tr__test__btn {
   width: 130px;
+  padding-left: 19px;
 }
 
 .temp__footer__app__connected .relink__btn {
@@ -2950,7 +2957,7 @@ span.ig-comment__time {
 .conversions__holder {
   display: flex;
   gap: 16px;
-  margin-bottom: 45px;
+  margin-bottom: 50px;
 }
 
 .conversions__holder svg {
@@ -2959,10 +2966,21 @@ span.ig-comment__time {
 
 .conversions__holder h2 {
   margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
 }
 
 .page__holder__app__connected .app__conn__email {
   margin: 0;
+  font-size: 22px;
+  line-height: 145%;
+  letter-spacing: -0.03em;
+}
+
+.page__holder__app__connected .test__btn {
+  margin-left: 6px;
 }
 
 .app__con__content .account__settings__bar {
@@ -3053,7 +3071,7 @@ span.ig-comment__time {
   align-items: start;
 }
 
-.linkApp__info {
+.linkApp__info h3 {
   font-weight: 700;
   font-size: 16px;
   line-height: 150%;
@@ -3103,9 +3121,9 @@ span.ig-comment__time {
   border: 1px solid var(--light-grey);
 }
 
-.page__holder__linkApp .linkApp__content {
+/* .page__holder__linkApp .linkApp__content {
   padding: 32px 32px 32px 65px;
-}
+} */
 
 .page__holder__linkApp .search__input {
   margin: 0;
@@ -3137,6 +3155,13 @@ span.ig-comment__time {
 
 .card__mini {
   overflow: hidden;
+}
+
+.card__mini__info h3 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
 }
 
 .card__mini__hover {
@@ -3629,6 +3654,10 @@ tbody .btn-fix span {
 /* Responsive styles */
 
 @media (max-width: 1439px) {
+  /* .page__holder__templates {
+    height: auto;
+  } */
+
   .search__icon {
     top: 50%;
     left: 2%;
@@ -3666,6 +3695,10 @@ tbody .btn-fix span {
     margin-right: -80%;
     margin-top: 10%;
   }
+
+  .page__holder__templates .back-button {
+    margin: 0;
+  }
 }
 
 /* @media (max-width: 1190px) {
@@ -3673,6 +3706,12 @@ tbody .btn-fix span {
     height: auto;
   }
 } */
+
+@media (min-width: 1191px) and (max-width: 1209px) {
+  .page__holder__templates {
+    height: auto;
+  }
+}
 
 @media (max-width: 1190px) {
   .page__holder__err__report,
@@ -3861,6 +3900,10 @@ tbody .btn-fix span {
     font-size: 16px;
   }
 
+  /* .page__holder__app__connected {
+    height: auto;
+  } */
+
   /* .page__holder__dash {
     height: auto;
   } */
@@ -3958,7 +4001,6 @@ tbody .btn-fix span {
 
   .popup-content h2,
   .breadcrumbs,
-  .radio-group label,
   .step-block h3,
   .page__holder__acc__settings h3 {
     font-size: 18px;
@@ -4258,7 +4300,15 @@ tbody .btn-fix span {
   .trigger__select,
   .trigger__form-field,
   .trigger__block,
-  .trigger__custom-select {
+  .trigger__custom-select,
+  .radio-group label,
+  .page__holder__create p,
+  .page__holder__create .options__step__block p,
+  .message-form,
+  .options__step__block .option,
+  .step-block-content button,
+  input::placeholder,
+  #message::placeholder {
     font-size: 14px;
   }
 
@@ -4327,5 +4377,10 @@ tbody .btn-fix span {
 
   .page__holder__templates .connect__aside__img {
     padding: 0;
+  }
+
+  .card__holder__mini {
+    overflow-y: scroll;
+    max-height: 400px;
   }
 }

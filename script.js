@@ -80,25 +80,25 @@ document.addEventListener('DOMContentLoaded', () => {
   setupModal('.popup-overlay');
 
   /** =========================== ОТКРЫТИЕ ПОПАПА ============================ */
-  const openBtn = document.getElementById('openPopupBtn');
-  const popupOverlay = document.getElementById('popupOverlay');
-  if (openBtn && popupOverlay) {
-    openBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      popupOverlay.style.display = 'flex';
-    });
-  }
+  // const openBtn = document.getElementById('openPopupBtn');
+  // const popupOverlay = document.getElementById('popupOverlay');
+  // if (openBtn && popupOverlay) {
+  //   openBtn.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     popupOverlay.style.display = 'flex';
+  //   });
+  // }
 
-  const specificRadio = document.querySelector(
-    'input[name="commentOption"][value="specific"]'
-  );
-  if (specificRadio && popupOverlay) {
-    specificRadio.addEventListener('change', () => {
-      if (specificRadio.checked) {
-        popupOverlay.style.display = 'flex';
-      }
-    });
-  }
+  // const specificRadio = document.querySelector(
+  //   'input[name="commentOption"][value="specific"]'
+  // );
+  // if (specificRadio && popupOverlay) {
+  //   specificRadio.addEventListener('change', () => {
+  //     if (specificRadio.checked) {
+  //       popupOverlay.style.display = 'flex';
+  //     }
+  //   });
+  // }
 
   /** =========================== СТАТУС INSTAGRAM ============================ */
   // const connected = true; // или false для теста
@@ -239,29 +239,29 @@ document.addEventListener('DOMContentLoaded', () => {
   // }
 
   /** =========================== ОБЩИЙ ОБРАБОТЧИК ДЛЯ ТУМБЛЕРОВ ============================ */
-  document.querySelectorAll('.toggle-switch').forEach((toggleLabel) => {
-    const input = toggleLabel.querySelector('input[type="checkbox"]');
-    if (!input) return;
+  // document.querySelectorAll('.toggle-switch').forEach((toggleLabel) => {
+  //   const input = toggleLabel.querySelector('input[type="checkbox"]');
+  //   if (!input) return;
 
-    let title =
-      toggleLabel.previousElementSibling?.tagName === 'H3'
-        ? toggleLabel.previousElementSibling
-        : toggleLabel.nextElementSibling?.tagName === 'H3'
-        ? toggleLabel.nextElementSibling
-        : null;
+  //   let title =
+  //     toggleLabel.previousElementSibling?.tagName === 'H3'
+  //       ? toggleLabel.previousElementSibling
+  //       : toggleLabel.nextElementSibling?.tagName === 'H3'
+  //       ? toggleLabel.nextElementSibling
+  //       : null;
 
-    if (!title) return;
+  //   if (!title) return;
 
-    input.addEventListener('change', () => {
-      if (title.textContent.includes('Activate DM automation')) {
-        title.textContent = input.checked
-          ? 'Activated'
-          : 'Activate DM automation';
-      } else if (title.textContent.includes('Unpublish')) {
-        title.textContent = input.checked ? 'Activated' : 'Unpublish';
-      }
-    });
-  });
+  //   input.addEventListener('change', () => {
+  //     if (title.textContent.includes('Activate DM automation')) {
+  //       title.textContent = input.checked
+  //         ? 'Activated'
+  //         : 'Activate DM automation';
+  //     } else if (title.textContent.includes('Unpublish')) {
+  //       title.textContent = input.checked ? 'Activated' : 'Unpublish';
+  //     }
+  //   });
+  // });
 
   /** =========================== КАСТОМНЫЙ SELECT ============================ */
   document.querySelectorAll('.trigger__custom-select').forEach((select) => {
@@ -579,3 +579,67 @@ function updateInstagramStatus(connected) {
 
 const connected = true; // или false
 updateInstagramStatus(connected);
+
+/** =========================== ОБЩИЙ ОБРАБОТЧИК ДЛЯ ТУМБЛЕРОВ ============================ */
+function initToggleSwitches() {
+  document.querySelectorAll('.toggle-switch').forEach((toggleLabel) => {
+    const input = toggleLabel.querySelector('input[type="checkbox"]');
+    if (!input) return;
+
+    let title =
+      toggleLabel.previousElementSibling?.tagName === 'H3'
+        ? toggleLabel.previousElementSibling
+        : toggleLabel.nextElementSibling?.tagName === 'H3'
+        ? toggleLabel.nextElementSibling
+        : null;
+
+    if (!title) return;
+
+    input.addEventListener('change', () => {
+      if (title.textContent.includes('Activate DM automation')) {
+        title.textContent = input.checked
+          ? 'Activated'
+          : 'Activate DM automation';
+      } else if (title.textContent.includes('Unpublish')) {
+        title.textContent = input.checked ? 'Activated' : 'Unpublish';
+      }
+    });
+  });
+}
+initToggleSwitches();
+
+/** =========================== ИНИЦИАЛИЗАЦИЯ ПОПАПОВ ============================ */
+function initPopupOpeners() {
+  const openBtn = document.getElementById('openPopupBtn');
+  const popupOverlay = document.getElementById('popupOverlay');
+
+  if (openBtn && popupOverlay) {
+    openBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      popupOverlay.style.display = 'flex';
+    });
+  }
+
+  const specificRadio = document.querySelector(
+    'input[name="commentOption"][value="specific"]'
+  );
+
+  if (specificRadio && popupOverlay) {
+    specificRadio.addEventListener('change', () => {
+      if (specificRadio.checked) {
+        popupOverlay.style.display = 'flex';
+      }
+    });
+  }
+}
+initPopupOpeners();
+
+/** =========================== ПЛЕЙСХОЛДЕРЫ ФОРМЫ ============================ */
+document
+  .querySelectorAll('input[placeholder], textarea[placeholder]')
+  .forEach((field) => {
+    const original = field.placeholder;
+
+    field.addEventListener('focus', () => (field.placeholder = ''));
+    field.addEventListener('blur', () => (field.placeholder = original));
+  });

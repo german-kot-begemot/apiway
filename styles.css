@@ -4355,4 +4355,8 @@ tbody .btn-fix span {
     overflow-y: scroll;
     max-height: 400px;
   }
+
+  .page__holder__linkApp .linkApp__content {
+    overflow-x: hidden;
+  }
 }

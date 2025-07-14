@@ -2805,6 +2805,9 @@ span.ig-comment__time {
   position: relative;
   user-select: none;
   font-size: 20px;
+  padding: 0 12px 0 18px;
+  display: flex;
+  align-items: center;
 }
 
 .trigger__custom-select.open .trigger__options {
@@ -2824,6 +2827,7 @@ span.ig-comment__time {
   font-weight: 400;
   font-size: 20px;
   line-height: 140%;
+  width: 100%;
 }
 
 .trigger__columns .trigger__selected {

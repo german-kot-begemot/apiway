@@ -283,7 +283,7 @@ button:hover {
   -ms-flex-pack: start;
   justify-content: flex-start;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .page__holder__dash {
@@ -1459,7 +1459,6 @@ button:hover {
   flex-direction: column;
   width: 100%;
   background: var(--background);
-  height: 100%;
 }
 
 .page__holder__templates .templates__holder {
@@ -2697,8 +2696,10 @@ span.ig-comment__time {
   width: 20px;
 }
 
-.page__holder__trigger {
-  height: 100%;
+.page__holder__trigger,
+.page__holder__acc__settings,
+.page__holder__err__report {
+  height: auto;
 }
 
 .page__holder__trigger .video__btn span {
@@ -2883,10 +2884,6 @@ span.ig-comment__time {
 }
 
 /* App connected*/
-
-.page__holder__app__connected {
-  height: 100%;
-}
 
 .account__settings__bar {
   display: flex;
@@ -3565,11 +3562,6 @@ h3.social__logins {
 
 /* Error Report styles */
 
-.page__holder__err__report,
-.err__report__content {
-  height: 100%;
-}
-
 .integration__content h2.err__rep__title {
   font-size: 24px;
   line-height: 150%;
@@ -3679,10 +3671,6 @@ tbody .btn-fix span {
 /* Responsive styles */
 
 @media (max-width: 1439px) {
-  /* .page__holder__templates {
-    height: auto;
-  } */
-
   .search__icon {
     top: 50%;
     left: 2%;
@@ -3726,22 +3714,10 @@ tbody .btn-fix span {
   }
 }
 
-/* @media (max-width: 1190px) {
-  .page__holder__dash {
-    height: auto;
-  }
-} */
-
-@media (min-width: 1191px) and (max-width: 1209px) {
-  .page__holder__templates {
-    height: auto;
-  }
-}
-
 @media (max-width: 1190px) {
-  .page__holder__err__report,
-  .err__report__content,
-  .page__holder__templates {
+  .page__holder__templates,
+  .page__holder__linkApp,
+  .page__holder__trigger {
     height: auto;
   }
 
@@ -3891,17 +3867,9 @@ tbody .btn-fix span {
   .trigger__arrow {
     display: none;
   }
-
-  /* .page__holder__dash {
-    height: auto;
-  } */
 }
 
 @media (max-width: 945px) {
-  .page__holder__err__report,
-  .err__report__content {
-    height: auto;
-  }
   .search__icon {
     top: 20%;
     left: 2%;
@@ -3910,10 +3878,6 @@ tbody .btn-fix span {
   .linkApp__content .search__icon {
     top: 50%;
   }
-
-  /* .page__holder__dash {
-    height: auto;
-  } */
 }
 
 @media (min-width: 768px) {
@@ -3924,14 +3888,6 @@ tbody .btn-fix span {
   .card__item__icons p {
     font-size: 16px;
   }
-
-  /* .page__holder__app__connected {
-    height: auto;
-  } */
-
-  /* .page__holder__dash {
-    height: auto;
-  } */
 }
 
 @media (min-width: 374px) and (max-width: 767px) {
@@ -4127,7 +4083,6 @@ tbody .btn-fix span {
 
   .page__holder__templates {
     padding: 10px;
-    height: auto;
   }
 
   .page__holder__templates .connect__aside__img {
@@ -4366,13 +4321,6 @@ tbody .btn-fix span {
 
   .linkApp__cards {
     margin: 10px 0;
-  }
-
-  .page__holder__err__report,
-  .err__report__content,
-  .page__holder__app__connected,
-  .app__con__content {
-    height: auto;
   }
 
   .app__con__content,

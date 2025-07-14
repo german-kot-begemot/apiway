@@ -766,10 +766,6 @@ button:hover {
   margin: 0 -2px 2px 2px;
 }
 
-/* .menu_with_search a.it__selected:hover {
-  cursor: default;
-} */
-
 .page__holder__automations .search_input-holder {
   position: relative;
   display: flex;
@@ -793,7 +789,6 @@ button:hover {
 .search__input {
   border: 1px solid #d1d2d8;
   border-radius: 12px;
-  /* padding: 8px 12px; */
   width: 430px;
   height: 40px;
   position: relative;
@@ -1384,8 +1379,6 @@ button:hover {
 
 .page__holder__templates header {
   padding: 40px 0 0 140px;
-  /* width: 159px;
-  height: 39px; */
 }
 
 .page__holder__templates .connect__aside__img {
@@ -1591,7 +1584,6 @@ button:hover {
 
 .dropdown-list {
   position: absolute;
-  /* top: 100%; */
   left: 0;
   width: 245px;
   top: -7%;
@@ -1790,10 +1782,6 @@ button:hover {
   background: var(--light-grey);
   border-radius: 12px;
 }
-
-/* .steps:nth-child(2) .point__holder {
-  padding: 26px 15px 0;
-} */
 
 .point__holder button {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -2557,10 +2545,11 @@ span.ig-comment__time {
 }
 
 .trigger__content h2 {
-  font-size: 20px;
-  line-height: 140%;
-  letter-spacing: -0.03em;
   margin: 0;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 145%;
+  letter-spacing: -0.03em;
 }
 
 .switchers-holder,
@@ -2599,6 +2588,7 @@ span.ig-comment__time {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 95%;
 }
 
 .step__1__top,
@@ -2636,14 +2626,23 @@ span.ig-comment__time {
 .trigger__custom-select {
   border: 1px solid var(--grey);
   border-radius: 12px;
-  padding: 8px 12px 8px 16px;
+  padding: 8px 12px 8px 11px;
   height: 48px;
   background: #fff;
   font-family: var(--font-family);
   font-size: 20px;
   line-height: 140%;
   letter-spacing: -0.03em;
-  margin: 4px 0 24px 0;
+  margin: 3px 0 24px 0;
+}
+
+.trigger__custom-select,
+.trigger__form-field {
+  padding: 8px 12px 8px 18px;
+}
+
+.trigger__form-field {
+  margin: -6px 0 22px;
 }
 
 .trigger__select:hover,
@@ -2691,7 +2690,15 @@ span.ig-comment__time {
   display: flex;
   align-items: center;
   gap: 2%;
-  margin-bottom: 16px;
+  margin-bottom: 27px;
+}
+
+.trigger__update-fields svg {
+  width: 20px;
+}
+
+.page__holder__trigger {
+  height: 100%;
 }
 
 .page__holder__trigger .video__btn span {
@@ -2708,6 +2715,7 @@ span.ig-comment__time {
   padding: 8px 16px;
   min-width: 104px;
   height: 40px;
+  background: white;
 }
 
 .save__exit__btn span {
@@ -2756,6 +2764,15 @@ span.ig-comment__time {
 .trigger__select-block {
   justify-content: start;
   gap: 8px;
+  padding: 8px 12px 8px 15px;
+}
+
+.trigger__account-display {
+  padding: 8px 12px 8px 15px;
+}
+
+.toggle-tiger {
+  width: 70px;
 }
 
 .trigger__select-event,
@@ -2833,6 +2850,10 @@ span.ig-comment__time {
   padding: 24px;
 }
 
+.trigger__form-preview {
+  margin-top: -4px;
+}
+
 .tr__header__wrapper {
   display: flex;
   align-items: center;
@@ -2848,7 +2869,7 @@ span.ig-comment__time {
 }
 
 .step__1__bottom .trigger__title {
-  margin: 24px 0;
+  margin: 22px 0 23px;
 }
 
 .trigger__arrow {
@@ -3120,10 +3141,6 @@ span.ig-comment__time {
   background: #fff;
   border: 1px solid var(--light-grey);
 }
-
-/* .page__holder__linkApp .linkApp__content {
-  padding: 32px 32px 32px 65px;
-} */
 
 .page__holder__linkApp .search__input {
   margin: 0;
@@ -3435,6 +3452,10 @@ button.toggle__password {
   background: transparent;
   top: 5px;
   position: absolute;
+}
+
+button.toggle__password:hover {
+  box-shadow: none;
 }
 
 #password__requirements {
@@ -4159,7 +4180,6 @@ tbody .btn-fix span {
   }
 
   .temp__card {
-    /* width: 50%; */
     height: auto;
     padding: 10px;
     width: 246px;

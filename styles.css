@@ -255,6 +255,13 @@ button:hover {
   height: 100%;
 }
 
+.page__holder__dash .templates__holder {
+  display: flex;
+  gap: 50px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
 .aside {
   display: flex;
   flex-direction: column;
@@ -3942,6 +3949,7 @@ tbody .btn-fix span {
 
   .akk__holder__wrapper {
     width: 100%;
+    min-height: auto;
   }
 
   .mob__changed {
@@ -4119,7 +4127,7 @@ tbody .btn-fix span {
   }
 
   .page__holder__templates .pop__card__holder {
-    margin: 26px 0;
+    margin: 0;
     gap: 10px;
     justify-content: left;
   }
@@ -4384,5 +4392,13 @@ tbody .btn-fix span {
 
   .page__holder__linkApp .linkApp__content {
     overflow-x: hidden;
+  }
+
+  .page__holder__dash .templates__holder {
+    gap: 10px;
+  }
+
+  .page__holder__templates h1 {
+    margin: 0;
   }
 }

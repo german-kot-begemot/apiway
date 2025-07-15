@@ -334,29 +334,34 @@ initOptionLikeSelection();
 function initFilePreview() {
   const fileInput = document.getElementById('fileInput');
   const previewContainer = document.getElementById('previewContainer');
+  const dmImageContainer = document.querySelector('.dm__uploaded__img');
 
-  if (!fileInput || !previewContainer) return;
+  if (!fileInput || !previewContainer || !dmImageContainer) return;
 
   fileInput.addEventListener('change', () => {
     const file = fileInput.files[0];
     if (file) {
       const reader = new FileReader();
-      reader.onload = function (e) {
-        previewContainer.innerHTML = `
-  <div class="preview-wrapper">
-    <div class="preview-image-container">
-      <img src="${e.target.result}" alt="Preview" />
-      <button class="remove-preview" type="button" aria-label="Remove preview">
-        <img src="images/cl.svg" alt="Close" />
-      </button>
-    </div>
-  </div>
-`;
 
+      reader.onload = function (e) {
+        const imageSrc = e.target.result;
+
+        previewContainer.innerHTML = `
+          <div class="preview-wrapper">
+            <div class="preview-image-container">
+              <img src="${imageSrc}" alt="Preview" />
+              <button class="remove-preview" type="button" aria-label="Remove preview">
+                <img src="images/cl.svg" alt="Close" />
+              </button>
+            </div>
+          </div>
+        `;
         document.querySelector('.icon').style.display = 'none';
         document.querySelector('.upload-text').style.display = 'none';
         document.querySelector('.browse-button').style.display = 'none';
         document.querySelector('.file-upload').style.border = 'none';
+
+        dmImageContainer.innerHTML = `<img src="${imageSrc}" alt="Uploaded image" />`;
 
         previewContainer
           .querySelector('.remove-preview')
@@ -367,11 +372,14 @@ function initFilePreview() {
             document.querySelector('.upload-text').style.display = '';
             document.querySelector('.browse-button').style.display = '';
             document.querySelector('.file-upload').style.border = '';
+            dmImageContainer.innerHTML = '';
           });
       };
+
       reader.readAsDataURL(file);
     } else {
       previewContainer.innerHTML = '';
+      dmImageContainer.innerHTML = '';
     }
   });
 }

@@ -398,16 +398,6 @@ button:hover {
   letter-spacing: -0.03em;
 }
 
-.templates__holder {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 50px;
-  width: 100%;
-  padding: 25px 0;
-  justify-content: flex-start;
-}
-
 .templates__holder > *:only-child {
   margin-left: auto;
   margin-right: auto;
@@ -875,9 +865,8 @@ button:hover {
   fill: var(--green);
   width: 72px;
   height: 40px;
-  background-color: #ddd;
+  background-color: var(--grey);
   border-radius: 20px;
-  box-shadow: inset 0 0 0 2px #ccc;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -1233,7 +1222,11 @@ button:hover {
   flex-direction: column;
   height: 100%;
   width: 42.8%;
-  padding: 40px 0 0 138px;
+  padding: 40px 0 142px 140px;
+}
+
+.page__holder__connect .connect__aside__header {
+  margin-bottom: 80px;
 }
 
 .connect__aside h1 {
@@ -1249,7 +1242,7 @@ button:hover {
   line-height: 225%;
   letter-spacing: -0.03em;
   color: var(--dark-grey);
-  margin: 4px 0 106px;
+  margin: 5px 0 104px;
 }
 
 .back-button {
@@ -1330,7 +1323,7 @@ button:hover {
 }
 
 .connect__aside__img {
-  margin: 80px 0 22px;
+  margin: 0 0 25px;
 }
 
 /* Connect page styles */
@@ -1408,20 +1401,6 @@ button:hover {
   display: none;
 }
 
-/* Connect page styles continued */
-.page__holder__shot {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.shot__img {
-  width: 30%;
-}
-
 /* Templates page styles continued */
 
 .page__holder__templates {
@@ -1435,9 +1414,16 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 24px 0 24px 140px;
-  height: 100%;
-  width: 100%;
+  flex-wrap: wrap;
+
+  margin: 49px 0 24px 140px;
+  height: auto;
+  width: auto;
+  padding: 0;
+}
+
+.page__holder__templates .pop__card__holder {
+  margin-bottom: 25px;
 }
 
 .page__holder__templates h1 {
@@ -1445,11 +1431,11 @@ button:hover {
   font-size: 32px;
   line-height: 100%;
   letter-spacing: -0.03em;
-  margin: -5% 0 -25px;
+  margin: 0 0 25px 0;
 }
 
 .video__holder {
-  margin-top: -24px;
+  margin-bottom: 50px;
 }
 
 .video__btn {
@@ -1523,8 +1509,10 @@ button:hover {
 
 .akk__holder__wrapper {
   display: flex;
-  gap: 3%;
   width: 50%;
+  margin-bottom: 7px;
+  gap: 22px;
+  align-items: center;
 }
 
 .akk {
@@ -1608,12 +1596,13 @@ button:hover {
 }
 
 .akk__info p {
-  margin: 0;
+  margin-top: 2px;
   font-style: italic;
   font-weight: 400;
   font-size: 14px;
   letter-spacing: -0.09px;
   color: var(--dark-grey);
+  letter-spacing: -0.03em;
 }
 
 .card_icon {
@@ -1629,7 +1618,7 @@ button:hover {
 .akk__holder {
   position: relative;
   width: 245px;
-  margin: 25px 4px 21px 0px;
+  margin: 0;
   height: 65px;
 }
 
@@ -1646,7 +1635,6 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
 }
 
 .connect-btn svg {
@@ -1987,8 +1975,11 @@ input[type='radio'] {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   color: var(--dark-grey);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.03em;
 }
 
 .options__step__block {
@@ -2011,8 +2002,6 @@ input[type='radio'] {
   border: 1px solid var(--main-black);
   border-radius: 20px;
   padding: 8px 16px;
-  width: 77px;
-  height: 34px;
   transition: background 0.3s ease;
 }
 
@@ -2201,7 +2190,8 @@ span.ig-comment__time {
   position: relative;
   cursor: pointer;
   padding: 3px;
-  width: 162px;
+  width: 158px;
+  border-radius: 24px;
   height: 37px;
 }
 
@@ -2218,12 +2208,14 @@ span.ig-comment__time {
 }
 
 .create__main__content .toggle-switch-background {
-  width: 158px;
+  width: 100%;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: end;
   position: relative;
   overflow: hidden;
+  height: 37px;
 }
 
 .create__main__content .toggle-switch-background p {
@@ -2237,24 +2229,25 @@ span.ig-comment__time {
 .create__main__content .toggle-switch-handle {
   border-radius: 24px;
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: calc(64% - 2px);
-  height: calc(95% - 2px);
+  width: 104px;
+  height: 31px;
+  top: 3px;
+  left: 3px;
   background: #fff;
   transition: left 0.3s ease;
   z-index: 0;
 }
 
 .create__main__content .toggle-option {
-  flex: 1;
+  transition: color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
-  transition: color 0.3s ease;
   font-weight: 400;
   font-size: 18px;
+  height: 31px;
+  padding: 5px 10px 5px 5px;
+  z-index: 1;
   color: var(--dark-grey);
 }
 
@@ -2263,8 +2256,8 @@ span.ig-comment__time {
   input[type='checkbox']:checked
   + .toggle-switch-background
   .toggle-switch-handle {
-  transform: translateX(23px);
-  width: 33%;
+  transform: translateX(28px);
+  width: 40px;
 }
 
 .create__main__content
@@ -2272,7 +2265,7 @@ span.ig-comment__time {
   input:checked
   + .toggle-switch-background
   .toggle-switch-handle {
-  left: calc(50% + 2px);
+  left: calc(158px - 3px - 75px);
 }
 
 .create__main__content
@@ -2347,44 +2340,55 @@ span.ig-comment__time {
   cursor: pointer;
 }
 
-.preview-container img {
-  border-radius: 10px;
-}
-
 .preview-container {
+  position: relative;
   align-self: baseline;
+  max-width: 170px;
+  max-height: 170px;
 }
 
-.remove-preview {
+.preview-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: block;
+}
+
+button.remove-preview {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: -21px;
+  right: -12px;
   background: rgba(0, 0, 0, 0.6);
-  color: white;
   border: none;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   font-size: 16px;
   line-height: 22px;
   text-align: center;
   cursor: pointer;
-  z-index: 10;
+  padding: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-preview img {
+  width: 25px;
+  height: 25px;
 }
 
 .preview-wrapper {
   position: relative;
+  width: 170px;
+  height: 170px;
 }
 
-.preview-wrapper button {
-  position: absolute;
-  top: -13px;
-  right: -28px;
-  height: 40px;
-  width: 40px;
-  background: transparent;
-  margin: 0;
-  padding: 0;
+.preview-image-container {
+  height: 170px;
 }
 
 .breadcrumbs {
@@ -2513,6 +2517,11 @@ span.ig-comment__time {
   height: 100%;
 }
 
+.page__holder__trigger .toggle-switch-background,
+.page__holder__create .toggle-switch-background {
+  background-color: var(--light-grey);
+}
+
 .trigger__content h2 {
   margin: 0;
   font-weight: 700;
@@ -2557,7 +2566,6 @@ span.ig-comment__time {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 95%;
 }
 
 .step__1__top,
@@ -2582,6 +2590,16 @@ span.ig-comment__time {
   letter-spacing: -0.03em;
 }
 
+.tr__header__wrapper button {
+  border: none;
+  background: transparent;
+}
+
+.tr__header__wrapper button:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
 .trigger__label {
   font-weight: 400;
   font-size: 14px;
@@ -2603,6 +2621,16 @@ span.ig-comment__time {
   line-height: 140%;
   letter-spacing: -0.03em;
   margin: 3px 0 24px 0;
+}
+
+.trigger__select {
+  padding-right: 36px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url('images/arr-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 10px 10px;
 }
 
 .trigger__custom-select,
@@ -2753,6 +2781,8 @@ span.ig-comment__time {
 .trigger__step__2 .tr__test__btn {
   background: var(--light-grey);
   margin-bottom: 24px;
+  width: 90px;
+  min-height: 40px;
 }
 
 .trigger__custom-select ul.trigger__options {
@@ -3225,13 +3255,16 @@ span.ig-comment__time {
 .linkApp__add__btn {
   border-radius: 12px;
   padding: 8px 16px;
-  width: 100%;
+  width: 150px;
   height: 40px;
   background: var(--yellow);
   border: none;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
 }
 
 /* AccSettings styles */
@@ -3858,10 +3891,6 @@ tbody .btn-fix span {
   .automations__content {
     height: 100%;
   }
-
-  .card__item__icons p {
-    font-size: 16px;
-  }
 }
 
 @media (min-width: 374px) and (max-width: 767px) {
@@ -4159,11 +4188,6 @@ tbody .btn-fix span {
   .page__holder__status .connect__aside__img,
   .page__holder__templates .connect__aside__img {
     width: auto;
-  }
-
-  .page__holder__shot img {
-    width: 50%;
-    height: auto;
   }
 
   .step-block-content button {

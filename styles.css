@@ -54,13 +54,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Coolvetica';
-  src: url('fonts/coolveticarg-regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
 :root {
   --background: #f3f3f3;
   --main-black: #242424;
@@ -76,7 +69,6 @@
   --font-family: 'Rubik', sans-serif;
   --second-family: 'SF Pro Text', sans-serif;
   --third-family: 'Mulish', sans-serif;
-  --font3: 'Coolvetica', sans-serif;
   --font4: 'Inter', sans-serif;
   --font5: 'Poppins', sans-serif;
 }
@@ -2584,10 +2576,10 @@ button.remove-preview {
   height: 100%;
 }
 
-.page__holder__trigger .toggle-switch-background,
+/* .page__holder__trigger .toggle-switch-background,
 .page__holder__create .toggle-switch-background {
   background-color: var(--light-grey);
-}
+} */
 
 .trigger__content h2 {
   margin: 0;
@@ -2726,6 +2718,10 @@ button.remove-preview {
   align-items: center;
 }
 
+.trigger__select-text {
+  color: var(--main-black);
+}
+
 .trigger__account-name {
   font-weight: 700;
   color: var(--main-black);
@@ -2784,7 +2780,7 @@ button.remove-preview {
 }
 
 .save__exit__btn span {
-  font-family: var(--font3);
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -2805,7 +2801,7 @@ button.remove-preview {
 }
 
 .header_trigger_holder .tr__test__btn span {
-  font-family: var(--font3);
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -2948,6 +2944,10 @@ button.remove-preview {
 
 .step__1__bottom .trigger__title {
   margin: 22px 0 23px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
 }
 
 .trigger__arrow {
@@ -3099,6 +3099,18 @@ button.remove-preview {
   gap: 16px;
   margin-top: 16px;
   align-items: center;
+}
+
+.page__holder__app__connected .trigger__tutorial-link {
+  color: var(--dark-grey);
+}
+
+.page__holder__app__connected .trigger__tutorial-link:hover {
+  color: var(--yellow) !important;
+}
+
+.page__holder__app__connected .trigger__tutorial-link:hover svg path {
+  fill: var(--yellow);
 }
 
 /* LinkApp */
@@ -3391,6 +3403,7 @@ button.remove-preview {
   box-shadow: none;
   border-bottom: 2px solid var(--yellow);
   border-radius: 0;
+  color: var(--main-black);
 }
 
 .acc__set__content {

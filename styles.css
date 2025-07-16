@@ -755,7 +755,8 @@ button:hover {
 .page__holder__linkApp .search__icon {
   width: 12px;
   fill: var(--dark-grey);
-  top: 47%;
+  left: 12px;
+  top: 50%;
 }
 
 .page__holder__linkApp .search__input::placeholder {
@@ -3115,6 +3116,14 @@ button.remove-preview {
 
 /* LinkApp */
 
+.page__holder__linkApp {
+  height: auto;
+}
+
+.page__holder__linkApp .linkApp__content {
+  padding: 32px 32px 32px 66px;
+}
+
 .linkApp_holder {
   display: flex;
   justify-content: space-between;
@@ -3156,13 +3165,13 @@ button.remove-preview {
 .linkApp__img__holder {
   border: 1px solid var(--light-grey);
   border-radius: 12px;
-  width: 56px;
+  width: 55px;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #f7f8f9;
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
 .linkApp__img__wrapper,
@@ -3184,7 +3193,6 @@ button.remove-preview {
   line-height: 150%;
   letter-spacing: -0.03em;
   display: flex;
-  gap: 16px;
 }
 
 .linkApp__info span {
@@ -3230,6 +3238,7 @@ button.remove-preview {
 
 .page__holder__linkApp .search__input {
   margin: 0;
+  padding: 8px 22px 8px 42px;
 }
 
 .card__holder__mini {

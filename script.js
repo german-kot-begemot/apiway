@@ -75,10 +75,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     selected.onclick = (e) => {
       e.stopPropagation();
-      document
-        .querySelectorAll('.trigger__custom-select')
-        .forEach((s) => s !== select && s.classList.remove('open'));
+      document.querySelectorAll('.trigger__custom-select').forEach((s) => {
+        if (s !== select) {
+          s.classList.remove('open', 'open-up');
+        }
+      });
+
       select.classList.toggle('open');
+
+      // Проверка места снизу
+      const rect = select.getBoundingClientRect();
+      const dropdown = select.querySelector('.trigger__options');
+      const dropdownHeight = dropdown.scrollHeight;
+
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+
+      if (spaceBelow < dropdownHeight && spaceAbove > dropdownHeight) {
+        select.classList.add('open-up');
+      } else {
+        select.classList.remove('open-up');
+      }
     };
 
     options.forEach((opt) => {

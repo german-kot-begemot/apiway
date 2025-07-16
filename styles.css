@@ -2862,6 +2862,13 @@ button.remove-preview {
 .trigger__custom-select.open .trigger__options {
   display: block;
   margin-top: 4px;
+  overflow-y: auto;
+}
+
+.trigger__custom-select.open-up .trigger__options {
+  top: auto;
+  bottom: 108%;
+  overflow-y: auto;
 }
 
 .trigger__selected {

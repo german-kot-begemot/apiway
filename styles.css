@@ -485,7 +485,8 @@ button:hover {
   font-size: 14px;
   line-height: 120%;
   letter-spacing: -0.1px;
-  margin-top: 6px;
+  margin-top: 5px;
+  margin-bottom: 2px;
 }
 
 .integration__content {
@@ -1056,7 +1057,7 @@ button:hover {
   height: 40px;
   background: var(--grey);
   margin-right: 9px;
-  color: white;
+  color: var(--dark-grey);
 }
 
 .modal-overlay {
@@ -1481,7 +1482,6 @@ button:hover {
   flex-direction: column;
   align-items: flex-start;
   flex-wrap: wrap;
-
   margin: 49px 0 24px 140px;
   height: auto;
   width: auto;
@@ -1787,7 +1787,6 @@ button:hover {
   width: 50%;
   position: sticky;
   top: 0;
-  /* height: 100vh; */
   overflow: hidden;
 }
 
@@ -2532,12 +2531,9 @@ button.remove-preview {
   border-radius: 24px;
   max-width: 779px;
   max-height: 633px;
-  /* margin-left: -42px; */
   width: 779px;
-  /* padding: 35px 38px; */
   height: auto;
   flex-wrap: nowrap;
-  /* overflow: hidden; */
   padding: 40px 0 33px 40px;
   overflow-x: hidden;
   margin: 0;
@@ -2632,11 +2628,6 @@ button.remove-preview {
   width: 100%;
   height: 100%;
 }
-
-/* .page__holder__trigger .toggle-switch-background,
-.page__holder__create .toggle-switch-background {
-  background-color: var(--light-grey);
-} */
 
 .trigger__content h2 {
   margin: 0;
@@ -3191,6 +3182,12 @@ button.remove-preview {
 .linkApp_holder div {
   margin: 0;
   padding: 0;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+}
+.linkApp_holder h2.my__linkd {
   font-size: 24px;
   line-height: 150%;
   letter-spacing: -0.03em;
@@ -3727,7 +3724,7 @@ h3.social__logins {
   box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);
   background: #fff;
   border-radius: 24px;
-  padding: 16px 16px 44px;
+  padding: 16px 16px 64px;
   margin-top: 24px;
 }
 
@@ -4547,6 +4544,7 @@ tbody .btn-fix span {
 
   .page__holder__linkApp .linkApp__content {
     overflow-x: hidden;
+    padding: 20px;
   }
 
   .page__holder__dash .templates__holder {

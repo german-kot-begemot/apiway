@@ -622,7 +622,7 @@ button:hover {
 }
 
 .page__holder__automations .search__icon {
-  left: 13px;
+  left: 22px;
 }
 
 .automations__content {
@@ -738,10 +738,20 @@ button:hover {
 }
 
 .page__holder__automations .search__input {
-  padding-left: 23px;
+  padding-left: 38px;
   padding-right: 12px;
   font-family: var(--font-family);
   font-size: 18px;
+  width: 430px;
+}
+
+.page__holder__automations .search__input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: -0.03em;
+  color: #d1d2d8;
 }
 
 .page__holder__linkApp .search_input-holder {
@@ -3924,6 +3934,19 @@ tbody .btn-fix span {
   .linkApp__content .search__icon {
     top: 50%;
   }
+
+  .page__holder__automations .search__input::placeholder {
+    font-size: 14px;
+  }
+
+  .page__holder__automations .search__input,
+  .page__holder__automations .search_input-holder {
+    width: 100%;
+  }
+
+  .page__holder__automations .search__icon {
+    left: 12px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -4411,5 +4434,14 @@ tbody .btn-fix span {
 
   .page__holder__templates h1 {
     margin: 0;
+  }
+
+  .close__btn {
+    &:after {
+      width: 20px;
+    }
+    &:before {
+      width: 20px;
+    }
   }
 }

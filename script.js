@@ -65,20 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /** =========================== УНИВЕРСАЛЬНЫЕ МОДАЛКИ ============================ */
-  function setupModal(modalSelector) {
-    document.querySelectorAll(modalSelector).forEach((modal) => {
-      modal.querySelectorAll('.close__btn').forEach((btn) => {
-        btn.addEventListener('click', () => (modal.style.display = 'none'));
-      });
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.style.display = 'none';
-      });
-    });
-  }
-  setupModal('.modal-overlay');
-  setupModal('.popup-overlay');
-
   /** =========================== КАСТОМНЫЙ SELECT ============================ */
   document.querySelectorAll('.trigger__custom-select').forEach((select) => {
     const selected = select.querySelector('.trigger__selected');
@@ -470,3 +456,22 @@ document
     field.addEventListener('focus', () => (field.placeholder = ''));
     field.addEventListener('blur', () => (field.placeholder = original));
   });
+
+/** =========================== УНИВЕРСАЛЬНЫЕ МОДАЛКИ ============================ */
+function setupModal(modalSelector) {
+  document.querySelectorAll(modalSelector).forEach((modal) => {
+    modal.querySelectorAll('.close__btn').forEach((btn) => {
+      btn.addEventListener('click', () => (modal.style.display = 'none'));
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  });
+}
+function initAllModals() {
+  setupModal('.modal-overlay');
+  setupModal('.popup-overlay');
+}
+
+initAllModals();

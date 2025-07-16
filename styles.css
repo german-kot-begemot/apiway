@@ -3935,16 +3935,20 @@ tbody .btn-fix span {
     top: 50%;
   }
 
-  .page__holder__automations .search__input::placeholder {
+  .page__holder__automations .search__input::placeholder,
+  .page__holder__linkApp .search__input::placeholder {
     font-size: 14px;
   }
 
   .page__holder__automations .search__input,
-  .page__holder__automations .search_input-holder {
+  .page__holder__automations .search_input-holder,
+  .page__holder__linkApp .search__input,
+  .page__holder__linkApp .search_input-holder {
     width: 100%;
   }
 
-  .page__holder__automations .search__icon {
+  .page__holder__automations .search__icon,
+  .page__holder__linkApp .search__icon {
     left: 12px;
   }
 }
@@ -4257,6 +4261,14 @@ tbody .btn-fix span {
     width: 100%;
   }
 
+  button.remove-preview {
+    width: 25px;
+  }
+
+  .preview-container img {
+    width: 100%;
+  }
+
   .file-upload,
   .step-block {
     width: 95%;
@@ -4284,7 +4296,6 @@ tbody .btn-fix span {
   }
 
   .line {
-    /* margin-right: 30px; */
     margin-right: 7px;
   }
 
@@ -4443,5 +4454,14 @@ tbody .btn-fix span {
     &:before {
       width: 20px;
     }
+  }
+
+  .option__choosed {
+    font-size: 14px;
+  }
+
+  .input-like {
+    height: auto;
+    min-height: 50px;
   }
 }

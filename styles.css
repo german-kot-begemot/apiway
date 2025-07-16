@@ -1687,6 +1687,7 @@ button:hover {
 .page__holder__create .public_holder {
   align-items: center;
   gap: 10px;
+  margin-right: 20px;
 }
 
 .page__holder__create .public_holder h3 {
@@ -1779,10 +1780,21 @@ button:hover {
   padding: 15px;
   background: var(--light-grey);
   border-radius: 12px;
+  gap: 10px;
 }
 
-.point__holder button {
+.point__holder input {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  border: none;
+  height: 55px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
 }
 
 .point__holder p {
@@ -1975,6 +1987,8 @@ textarea {
   letter-spacing: -0.03em;
   padding: 13px 15px 13px 13px;
   border: transparent;
+  overflow: hidden;
+  resize: none;
 }
 
 .logo_create {
@@ -2469,16 +2483,20 @@ button.remove-preview {
   border-radius: 24px;
   max-width: 779px;
   max-height: 633px;
-  margin-left: -42px;
+  /* margin-left: -42px; */
   width: 779px;
-  padding: 35px 38px;
+  /* padding: 35px 38px; */
   height: auto;
   flex-wrap: nowrap;
-  overflow: hidden;
+  /* overflow: hidden; */
+  padding: 40px 0 33px 40px;
+  overflow-x: hidden;
+  margin: 0;
 }
 
 .page__holder__create .pop__card__holder {
-  overflow: scroll;
+  padding: 0;
+  overflow-y: scroll;
   gap: 4%;
   height: auto;
   display: flex;
@@ -3807,7 +3825,6 @@ tbody .btn-fix span {
   }
 
   .page__holder__create .popup-content {
-    margin: 10px;
     width: auto;
   }
 
@@ -3817,6 +3834,7 @@ tbody .btn-fix span {
 
   .page__holder__create .popup-content h2 {
     margin-bottom: 20px;
+    width: 80%;
   }
 
   .pop__title h3 {
@@ -4373,7 +4391,9 @@ tbody .btn-fix span {
   .options__step__block .option,
   .step-block-content button,
   input::placeholder,
-  #message::placeholder {
+  #message::placeholder,
+  .page__holder__create input,
+  .page__holder__create textarea {
     font-size: 14px;
   }
 

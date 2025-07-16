@@ -416,7 +416,7 @@ function initToggleSwitches() {
     const input = toggleLabel.querySelector('input[type="checkbox"]');
     if (!input) return;
 
-    let title =
+    const title =
       toggleLabel.previousElementSibling?.tagName === 'H3'
         ? toggleLabel.previousElementSibling
         : toggleLabel.nextElementSibling?.tagName === 'H3'
@@ -425,17 +425,16 @@ function initToggleSwitches() {
 
     if (!title) return;
 
+    if (!title.dataset.original) {
+      title.dataset.original = title.textContent;
+    }
+
     input.addEventListener('change', () => {
-      if (title.textContent.includes('Activate DM automation')) {
-        title.textContent = input.checked
-          ? 'Activated'
-          : 'Activate DM automation';
-      } else if (title.textContent.includes('Unpublish')) {
-        title.textContent = input.checked ? 'Activated' : 'Unpublish';
-      }
+      title.textContent = input.checked ? 'Activated' : title.dataset.original;
     });
   });
 }
+
 initToggleSwitches();
 
 /** =========================== ИНИЦИАЛИЗАЦИЯ ПОПАПОВ ============================ */
@@ -492,3 +491,18 @@ function initAllModals() {
 }
 
 initAllModals();
+
+// =========================== АВТОМАТИЧЕСКАЯ ПОДГОНКА ВЫСОТЫ ТЕКСТОВОЙ ОБЛАСТИ ============================
+function changeTextareaHeight() {
+  document.querySelectorAll('textarea').forEach((textarea) => {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+
+    textarea.addEventListener('input', () => {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    });
+  });
+}
+
+changeTextareaHeight();

@@ -1516,15 +1516,22 @@ button:hover {
 .page__holder__templates .pop__card {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--main-black);
+  background: white;
   border-radius: 24px;
   width: 330px;
   height: 253px;
   overflow: hidden;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(25, 29, 58, 0.04);
+}
+
+.page__holder__templates .pop__card:hover {
+  border: 1px solid var(--main-black);
 }
 
 .page__holder__templates .pop__content {
   overflow: hidden;
+  margin-top: -1px;
 }
 
 .page__holder__templates .pop__content img {
@@ -4385,7 +4392,8 @@ tbody .btn-fix span {
   }
 
   .options__step__block {
-    flex-direction: column;
+    flex-direction: row;
+    overflow-x: scroll;
     align-items: start;
   }
 
@@ -4408,24 +4416,8 @@ tbody .btn-fix span {
     height: 40px;
   }
 
-  .icon__ar {
-    bottom: 18.4%;
-  }
-
-  .icon__letter {
-    top: 37.5%;
-  }
-
-  .icon__mess {
-    top: 15.6%;
-  }
-
   .line-icon-top {
     top: 0;
-  }
-
-  .steps:nth-child(2) .point__holder {
-    padding: 10px;
   }
 
   .page__holder__create .pop__card__holder {
@@ -4433,6 +4425,10 @@ tbody .btn-fix span {
     align-items: start;
     flex-wrap: nowrap;
     width: 100%;
+  }
+
+  .steps .step-block:nth-child(2) .point__holder {
+    height: auto;
   }
 
   .page__holder__create .popup-content .pop__card {

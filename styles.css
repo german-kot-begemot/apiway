@@ -647,10 +647,6 @@ button:hover {
   height: 100%;
 }
 
-.page__holder__automations .search__icon {
-  left: 22px;
-}
-
 .automations__content {
   display: flex;
   flex-direction: column;
@@ -758,65 +754,33 @@ button:hover {
   margin: 0 -2px 2px 2px;
 }
 
+.search_input-holder {
+  position: relative;
+  display: flex;
+}
+
 .page__holder__automations .search_input-holder {
-  position: relative;
-  display: flex;
-}
-
-.page__holder__automations .search__input {
-  padding-left: 38px;
-  padding-right: 12px;
-  font-family: var(--font-family);
-  font-size: 18px;
-  width: 430px;
-}
-
-.page__holder__automations .search__input::placeholder {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 133%;
-  letter-spacing: -0.03em;
-  color: #d1d2d8;
-}
-
-.page__holder__linkApp .search_input-holder {
-  position: relative;
-  display: flex;
-  width: 344px;
-}
-
-.page__holder__linkApp .search__icon {
-  width: 12px;
-  fill: var(--dark-grey);
-  left: 12px;
-  top: 50%;
-}
-
-.page__holder__linkApp .search__input::placeholder {
-  fill: var(--dark-grey);
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.03em;
-  color: var(--dark-grey);
+  margin-right: -8px;
 }
 
 .search__input {
   border: 1px solid #d1d2d8;
   border-radius: 12px;
-  width: 430px;
   height: 40px;
   position: relative;
-  padding-left: 28px;
-  box-sizing: border-box;
-  margin: 0px 9px;
+  padding-left: 38px;
+  padding-right: 12px;
+  font-family: var(--font-family);
+  font-size: 18px;
+  width: 100%;
 }
 
 .search__input::placeholder {
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 133%;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.03em;
   color: #d1d2d8;
 }
 
@@ -842,6 +806,19 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.page__holder__automations .search__input {
+  margin-right: 10px;
+  width: 430px;
+}
+
+.page__holder__linkApp .search__input {
+  width: 344px;
+}
+
+.search__icon {
+  left: 13px;
 }
 
 .autom__create__btn {
@@ -1547,7 +1524,6 @@ button:hover {
 }
 
 .page__holder__templates .pop__content {
-  flex: 0 0 172.5px;
   overflow: hidden;
 }
 
@@ -1850,10 +1826,6 @@ button:hover {
   letter-spacing: -0.03em;
 }
 
-.step-block {
-  margin-bottom: 5px;
-}
-
 .line {
   background-color: var(--grey);
   display: flex;
@@ -1916,8 +1888,9 @@ button:hover {
 .steps {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 50px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .step-block h3 {
@@ -1925,6 +1898,7 @@ button:hover {
   font-size: 22px;
   line-height: 145%;
   letter-spacing: -0.03em;
+  margin-bottom: 10px;
 }
 
 .step {
@@ -1946,7 +1920,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  margin-top: 10px;
 }
 
 .step-block-content button {
@@ -1969,11 +1942,29 @@ button:hover {
   margin: 0;
 }
 
+.steps .step-block:nth-child(2) .step-block-content {
+  margin-top: -11px;
+}
+
+.steps .step-block:nth-child(2) .point__holder {
+  height: 149px;
+  padding: 12px 14px;
+  gap: 0;
+}
+
+.steps .step-block:nth-child(2) .input-like {
+  min-height: 50px;
+  margin: 10px 0 5px;
+}
+
+.steps .step-block:nth-child(2) .options__step__block .option {
+  margin: 0 5px 0 0;
+}
+
 .radio-group label {
   display: flex;
   align-items: center;
-  gap: 2px;
-  margin-top: 8px;
+  margin-bottom: 10px;
   cursor: pointer;
   background: var(--light-grey);
   border-radius: 12px;
@@ -1991,7 +1982,7 @@ button:hover {
 .message-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  padding: 12px 14px;
   font-size: 20px;
   line-height: 160%;
   letter-spacing: -0.03em;
@@ -2028,7 +2019,8 @@ button:hover {
 
 textarea {
   border-radius: 12px;
-  height: 90px;
+  min-height: 90px;
+  height: auto;
   font-weight: 400;
   font-size: 20px;
   line-height: 120%;
@@ -2037,6 +2029,12 @@ textarea {
   border: transparent;
   overflow: hidden;
   resize: none;
+}
+
+.upload-text {
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  margin-bottom: -5px;
 }
 
 .logo_create {
@@ -2087,7 +2085,6 @@ input[type='radio'] {
 
 .options__step__block {
   display: flex;
-  gap: 10px;
   align-items: center;
 }
 
@@ -2095,6 +2092,7 @@ input[type='radio'] {
   font-size: 18px;
   line-height: 133%;
   letter-spacing: -0.03em;
+  margin-right: 10px;
 }
 
 .options__step__block .option {
@@ -3287,11 +3285,6 @@ button.remove-preview {
 .linkApp__card .linkApp__relink__btn {
   background: #fff;
   border: 1px solid var(--light-grey);
-}
-
-.page__holder__linkApp .search__input {
-  margin: 0;
-  padding: 8px 22px 8px 42px;
 }
 
 .card__holder__mini {

@@ -2093,6 +2093,11 @@ input[type='radio'] {
 .options__step__block {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.options__step__block .options__holder {
+  display: flex;
 }
 
 .page__holder__create .options__step__block p {
@@ -4389,12 +4394,6 @@ tbody .btn-fix span {
     padding: 0;
     margin-left: 20px;
     gap: 0;
-  }
-
-  .options__step__block {
-    flex-direction: row;
-    overflow-x: scroll;
-    align-items: start;
   }
 
   .step-block-content {

@@ -2140,6 +2140,7 @@ input[type='radio'] {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px 0 0;
+  margin-bottom: -21px;
 }
 
 /* Phone styles */
@@ -2149,15 +2150,28 @@ input[type='radio'] {
   background-size: auto;
   background-position: top;
   display: flex;
-  justify-content: end;
+  /* justify-content: end; */
   align-items: end;
-  margin: 11px 0 0 9px;
+  margin: 12px 0 0 0;
   border-radius: 0 0 37px 37px;
-
+  /* 
   width: 100%;
-  max-width: 257px;
+  max-width: 257px; */
   aspect-ratio: 257 / 531;
   position: relative;
+
+  width: 275px;
+  /* height: 569px; */
+  min-height: 569px;
+  min-width: 275px;
+  padding: 0 12px 12px 12px;
+  justify-content: center;
+  /* margin: 0;
+  margin-top: 12px; */
+}
+
+.phone__screen__comments {
+  margin-bottom: -7px;
 }
 
 .phone__screen__dm {
@@ -2211,8 +2225,9 @@ input[type='radio'] {
   padding: 13px;
   position: absolute;
   z-index: 1;
-  top: 31%;
+  top: 35.3%;
   border: none;
+  left: 2%;
 }
 
 .ig-comment {
@@ -2234,7 +2249,7 @@ input[type='radio'] {
 span.ig-comment__username {
   font-family: var(--second-family);
   font-weight: 500;
-  font-size: 6px;
+  font-size: 7px;
   letter-spacing: -0.01em;
   color: #fff;
 }
@@ -2242,7 +2257,7 @@ span.ig-comment__username {
 span.ig-comment__time {
   font-family: var(--second-family);
   font-weight: 400;
-  font-size: 6px;
+  font-size: 7px;
   letter-spacing: -0.01em;
   color: rgba(255, 255, 255, 0.6);
 }
@@ -2250,7 +2265,7 @@ span.ig-comment__time {
 .ig-comment__actions a {
   font-family: var(--second-family);
   font-weight: 600;
-  font-size: 7px;
+  font-size: 8px;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.6);
 }
@@ -2259,17 +2274,18 @@ span.ig-comment__time {
   display: flex;
   align-items: start;
   justify-content: space-between;
-  gap: 10px;
+  gap: 7px;
 }
 
 .detect {
   top: 61px;
   left: 35px;
+  min-height: 10px;
+  font-family: var(--second-family);
   font-weight: 400;
-  font-size: 7px;
+  font-size: 8px;
   letter-spacing: -0.01em;
   color: #fff;
-  height: 6px;
 }
 
 .ig-with-img {
@@ -2280,6 +2296,10 @@ span.ig-comment__time {
   height: auto;
   min-height: 184px;
   width: 134px;
+}
+
+.igg-like {
+  margin: 9px 17px 0 0;
 }
 
 .ig-with-img img {
